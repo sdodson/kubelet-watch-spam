@@ -1,0 +1,16 @@
+# Generated/output artifacts, not part of the harness itself
+manifests/
+spike-captures/
+__pycache__/
+*.pyc
+.work/
+
+# Local Claude Code project settings
+.claude/
+
+# Experiment-specific build artifacts (RPMs, custom Containerfiles)
+rpms/
+
+# Common local junk
+*.log
+.DS_Store

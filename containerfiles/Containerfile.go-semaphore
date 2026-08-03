@@ -6,7 +6,14 @@
 #      stage before the build runs (everything else in that stage — the
 #      `make WHAT=...` invocation, its flags/GOEXPERIMENT/ldflags — is
 #      untouched, so it picks up FIPS build settings exactly as the official
-#      pipeline does).
+#      pipeline does). This must include `golang-src` (the actual GOROOT/src
+#      standard library source), not just `golang`/`golang-bin` (the compiler
+#      and linker binaries) — an earlier version of this build only installed
+#      the latter two, so `go build` silently compiled against the *stock*
+#      standard library source already present in the base image instead of
+#      the patched one, and the semaphore code (`vendor/github.com/golang-fips/
+#      openssl/v2/sem.go`, gated by `//go:build cgo && !openssl_no_sem &&
+#      !cmd_go_bootstrap`) was never part of the compiled output as a result.
 #   2. The source is fetched via a shallow git checkout of the exact commit
 #      instead of `COPY . .`, since this build has no local checkout to use
 #      as build context.
@@ -17,10 +24,11 @@
 #      container (cert-syncer, etc.) byte-identical to the live cluster.
 
 FROM registry.ci.openshift.org/ocp/builder:rhel-9-golang-1.24-openshift-4.20 AS builder
-COPY golang-1.24.13-10.testonly.el9_8.x86_64.rpm golang-bin-1.24.13-10.testonly.el9_8.x86_64.rpm /tmp/
+COPY golang-1.24.13-10.testonly.el9_8.x86_64.rpm golang-bin-1.24.13-10.testonly.el9_8.x86_64.rpm golang-src-1.24.13-10.testonly.el9_8.noarch.rpm /tmp/
 RUN rpm -Uvh --force --nodeps \
       /tmp/golang-1.24.13-10.testonly.el9_8.x86_64.rpm \
-      /tmp/golang-bin-1.24.13-10.testonly.el9_8.x86_64.rpm && \
+      /tmp/golang-bin-1.24.13-10.testonly.el9_8.x86_64.rpm \
+      /tmp/golang-src-1.24.13-10.testonly.el9_8.noarch.rpm && \
     rm -f /tmp/golang-*.rpm && \
     go version
 

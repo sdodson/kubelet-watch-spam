@@ -3,9 +3,18 @@
 **Date:** 2026-08-01 (batch 1), 2026-08-02 (batch 2)
 **Cluster:** fips-mode-5c8hc
 
-This is the baseline for comparison against the combined "solution under test" (per-CPU-DRBG
-kernel + go-semaphore kube-apiserver build), recorded in
-`2026-08-01-go-semaphore-drbg-kernel-20rounds.md`.
+This is the stock baseline for the doubled m6i.4xlarge control plane / 2,900-pod workload used
+throughout this investigation.
+
+**Note (2026-08-03):** earlier versions of this doc compared this baseline against a "go-semaphore"
+build. That comparison and all associated go-semaphore results/docs from before this date were
+removed — the go-semaphore images tested through 2026-08-03 were missing the `golang-src` RPM
+matching the patched toolchain, so they were built against the *stock* standard library source and
+never actually contained the semaphore patch (`vendor/github.com/golang-fips/openssl/v2/sem.go`).
+Every prior comparison was measuring an inert binary, not the real mechanism. A corrected build
+(`go-semaphore-v3`, confirmed via `go tool nm` to contain `drbgSemEnabled`/`drbgSemInstance`) is
+being tested fresh — see later dated result files for that data. This stock baseline dataset
+itself is unaffected and remains valid for comparison against the corrected build.
 
 **Update 2026-08-02:** collected a second 20-round batch (`stock-baseline-4xlcp-batch2`) on the
 identical environment (no config changes between batches) to increase sample size and check
@@ -96,27 +105,10 @@ Full timestamped detail: `2026-08-02-stock-baseline-4xlcp-batch2-rounds-raw.log`
 | min | 81 | 51 | 51 |
 | max | 1206 | 2795 | 2795 |
 
-## Comparison: combined stock baseline (n=38) vs. go-semaphore+DRBG-kernel solution (n=19)
+## Notes for future comparisons
 
-| Stat | Stock baseline (n=38) | Solution (n=19) | Delta |
-|---|---:|---:|---:|
-| mean | 636 | 657 | +3.4% (worse) |
-| median | 535 | 468 | -12.5% (better) |
-| p75 | 907 | 686 | -24.4% (better) |
-| p90 | 1174 | 1364 | +16.2% (worse) |
-| stddev | 528 | 645 | +22% (noisier) |
-
-**Welch's two-sample t-test (mean thread count, n=38 vs n=19): t = -0.125, df≈30.4 — not
-statistically significant**, and weaker than the batch-1-only comparison (t=-0.455). Doubling the
-baseline sample size shrank the apparent gap (mean delta went from +13.3% to +3.4%, median delta
-from -21.7% to -12.5%) rather than confirming it — the initial batch-1 gap was largely noise.
-
-## Conclusion
-
-With combined stock-baseline n=38 vs. solution n=19, there is **no detectable effect** from the
-go-semaphore + per-CPU-DRBG-kernel combination. The two distributions largely overlap; the
-apparent improvement seen after the first 20-round comparison did not hold up with more data.
-Per the earlier power analysis, distinguishing a real ~30-40% effect from this noise floor would
-require substantially more rounds per arm (order ~100+), or a fundamentally lower-noise
-measurement approach (e.g. direct bpftrace instrumentation of blocking call stacks rather than
-peak aggregate thread counts).
+Per the earlier power analysis for this workload, distinguishing a real ~30-40% effect from this
+noise floor (CV 57-104% across the two batches) would require substantially more rounds per arm
+(order ~100+) than a single 20-round batch, or a fundamentally lower-noise measurement approach
+(e.g. direct bpftrace instrumentation of blocking call stacks rather than peak aggregate thread
+counts). Any future comparison against this baseline should account for that.

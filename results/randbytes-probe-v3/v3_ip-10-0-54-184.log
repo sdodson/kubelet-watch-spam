@@ -1,0 +1,2749 @@
+17:12:23 looper started, initial pid=634038
+17:15:44 === new kube-apiserver pid=643485 ===
+17:15:44 capturing for 400s (pid=643485)...
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:30:29-34: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                            ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:30:37-48: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                                    ~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:37:51-56: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:37:59-65: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                          ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:38:10-15: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:38:18-24: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+                 ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_643485.bt:31:9-28: WARNING: Return value discarded.
+        delete(@entry[tid]);
+        ~~~~~~~~~~~~~~~~~~~
+WARNING: Kernel version (5.14.0-730.el9.x86_64) is lower than the minimum supported kernel version (5.15.0). Some features/scripts may not work as expected.
+Attached 5 probes
+Tracing RAND_bytes for PID 643485 for 400 seconds...
+1  active=0  max_active=1
+2  active=0  max_active=1
+3  active=0  max_active=1
+4  active=0  max_active=1
+5  active=0  max_active=1
+6  active=0  max_active=3
+7  active=0  max_active=3
+8  active=0  max_active=3
+9  active=0  max_active=3
+10  active=0  max_active=3
+11  active=0  max_active=3
+12  active=0  max_active=3
+13  active=0  max_active=3
+14  active=0  max_active=3
+15  active=0  max_active=3
+16  active=0  max_active=3
+17  active=0  max_active=3
+18  active=0  max_active=3
+19  active=0  max_active=3
+20  active=0  max_active=3
+21  active=0  max_active=3
+22  active=0  max_active=3
+23  active=0  max_active=3
+24  active=0  max_active=3
+25  active=0  max_active=3
+26  active=0  max_active=3
+27  active=0  max_active=3
+28  active=0  max_active=4
+29  active=0  max_active=4
+30  active=0  max_active=4
+31  active=0  max_active=4
+32  active=0  max_active=4
+33  active=0  max_active=4
+34  active=0  max_active=4
+35  active=0  max_active=4
+36  active=0  max_active=4
+37  active=0  max_active=4
+38  active=0  max_active=4
+39  active=0  max_active=4
+40  active=0  max_active=4
+41  active=0  max_active=4
+42  active=0  max_active=4
+43  active=0  max_active=4
+44  active=0  max_active=4
+45  active=1  max_active=4
+46  active=2  max_active=4
+47  active=2  max_active=4
+48  active=2  max_active=4
+49  active=2  max_active=4
+50  active=2  max_active=4
+51  active=2  max_active=4
+52  active=2  max_active=4
+53  active=2  max_active=4
+54  active=2  max_active=4
+55  active=2  max_active=4
+56  active=2  max_active=4
+57  active=2  max_active=4
+58  active=2  max_active=5
+59  active=2  max_active=5
+60  active=2  max_active=5
+61  active=2  max_active=5
+62  active=2  max_active=5
+63  active=2  max_active=5
+64  active=2  max_active=5
+65  active=2  max_active=5
+66  active=2  max_active=5
+67  active=2  max_active=5
+68  active=2  max_active=5
+69  active=2  max_active=5
+70  active=2  max_active=5
+71  active=2  max_active=5
+72  active=2  max_active=5
+73  active=2  max_active=5
+74  active=2  max_active=5
+75  active=2  max_active=5
+76  active=2  max_active=5
+77  active=2  max_active=5
+78  active=2  max_active=5
+79  active=2  max_active=5
+80  active=2  max_active=5
+81  active=2  max_active=5
+82  active=2  max_active=5
+83  active=2  max_active=5
+84  active=2  max_active=5
+85  active=2  max_active=5
+86  active=2  max_active=5
+87  active=2  max_active=5
+88  active=2  max_active=5
+89  active=2  max_active=5
+90  active=2  max_active=5
+91  active=3  max_active=5
+92  active=3  max_active=5
+93  active=3  max_active=5
+94  active=3  max_active=5
+95  active=3  max_active=5
+96  active=3  max_active=5
+97  active=3  max_active=5
+98  active=3  max_active=5
+99  active=3  max_active=5
+100  active=3  max_active=5
+101  active=3  max_active=5
+102  active=3  max_active=5
+103  active=3  max_active=5
+104  active=3  max_active=5
+105  active=3  max_active=5
+106  active=3  max_active=5
+107  active=3  max_active=5
+108  active=3  max_active=5
+109  active=3  max_active=5
+110  active=3  max_active=6
+111  active=3  max_active=6
+112  active=3  max_active=6
+113  active=3  max_active=6
+114  active=3  max_active=6
+115  active=3  max_active=6
+116  active=3  max_active=6
+117  active=3  max_active=6
+118  active=3  max_active=6
+119  active=3  max_active=6
+120  active=4  max_active=6
+121  active=4  max_active=6
+122  active=5  max_active=6
+123  active=5  max_active=6
+124  active=5  max_active=7
+125  active=5  max_active=7
+126  active=5  max_active=9
+127  active=5  max_active=9
+128  active=5  max_active=9
+129  active=5  max_active=10
+130  active=5  max_active=10
+131  active=1  max_active=11
+132  active=0  max_active=11
+133  active=0  max_active=11
+134  active=1  max_active=11
+135  active=1  max_active=11
+136  active=0  max_active=11
+137  active=0  max_active=11
+138  active=0  max_active=11
+139  active=0  max_active=11
+140  active=3  max_active=11
+141  active=1  max_active=11
+142  active=3  max_active=12
+143  active=0  max_active=12
+144  active=0  max_active=12
+145  active=0  max_active=12
+146  active=0  max_active=12
+147  active=4  max_active=12
+148  active=5  max_active=12
+149  active=4  max_active=12
+150  active=4  max_active=12
+151  active=7  max_active=12
+152  active=5  max_active=12
+153  active=2  max_active=12
+154  active=1  max_active=12
+155  active=5  max_active=12
+156  active=5  max_active=12
+157  active=0  max_active=12
+158  active=0  max_active=12
+159  active=0  max_active=12
+160  active=1  max_active=12
+161  active=1  max_active=12
+162  active=1  max_active=12
+163  active=1  max_active=12
+164  active=0  max_active=12
+165  active=0  max_active=12
+166  active=0  max_active=12
+167  active=0  max_active=12
+168  active=0  max_active=12
+169  active=0  max_active=12
+170  active=0  max_active=12
+171  active=1  max_active=12
+172  active=1  max_active=12
+173  active=1  max_active=12
+174  active=1  max_active=12
+175  active=3  max_active=12
+176  active=3  max_active=12
+177  active=2  max_active=12
+178  active=2  max_active=12
+179  active=2  max_active=12
+180  active=2  max_active=12
+181  active=2  max_active=12
+182  active=2  max_active=12
+183  active=1  max_active=12
+184  active=2  max_active=12
+185  active=2  max_active=12
+186  active=1  max_active=12
+187  active=1  max_active=12
+188  active=1  max_active=12
+189  active=1  max_active=12
+190  active=1  max_active=12
+191  active=1  max_active=12
+192  active=1  max_active=12
+193  active=1  max_active=12
+194  active=1  max_active=12
+195  active=1  max_active=12
+196  active=1  max_active=12
+197  active=1  max_active=12
+198  active=1  max_active=12
+199  active=1  max_active=12
+200  active=1  max_active=12
+201  active=1  max_active=12
+202  active=1  max_active=12
+203  active=1  max_active=12
+204  active=1  max_active=12
+205  active=2  max_active=12
+206  active=3  max_active=12
+207  active=4  max_active=12
+208  active=4  max_active=12
+209  active=4  max_active=12
+210  active=4  max_active=12
+211  active=4  max_active=12
+212  active=4  max_active=12
+213  active=0  max_active=12
+214  active=0  max_active=12
+215  active=0  max_active=12
+216  active=0  max_active=12
+217  active=0  max_active=12
+218  active=0  max_active=12
+219  active=0  max_active=12
+220  active=0  max_active=12
+221  active=0  max_active=12
+222  active=0  max_active=12
+223  active=0  max_active=12
+224  active=0  max_active=12
+225  active=0  max_active=12
+226  active=0  max_active=12
+227  active=0  max_active=12
+228  active=0  max_active=12
+229  active=3  max_active=12
+230  active=3  max_active=12
+231  active=3  max_active=12
+232  active=3  max_active=12
+233  active=4  max_active=12
+234  active=4  max_active=12
+235  active=4  max_active=12
+236  active=4  max_active=12
+237  active=3  max_active=12
+238  active=3  max_active=12
+239  active=4  max_active=12
+240  active=4  max_active=12
+241  active=4  max_active=12
+242  active=3  max_active=12
+243  active=3  max_active=12
+244  active=3  max_active=12
+245  active=3  max_active=12
+246  active=3  max_active=12
+247  active=3  max_active=12
+248  active=3  max_active=12
+249  active=3  max_active=12
+250  active=3  max_active=12
+251  active=3  max_active=12
+252  active=3  max_active=12
+253  active=3  max_active=12
+254  active=3  max_active=12
+255  active=3  max_active=12
+256  active=3  max_active=12
+257  active=3  max_active=12
+258  active=3  max_active=12
+259  active=3  max_active=12
+260  active=3  max_active=12
+261  active=3  max_active=12
+262  active=3  max_active=12
+263  active=3  max_active=12
+264  active=3  max_active=12
+265  active=3  max_active=12
+266  active=3  max_active=12
+267  active=3  max_active=12
+268  active=6  max_active=12
+269  active=6  max_active=12
+270  active=6  max_active=12
+271  active=6  max_active=12
+272  active=6  max_active=12
+273  active=6  max_active=12
+274  active=6  max_active=12
+275  active=6  max_active=12
+276  active=6  max_active=12
+277  active=6  max_active=12
+278  active=6  max_active=12
+279  active=6  max_active=12
+280  active=6  max_active=12
+281  active=6  max_active=12
+282  active=6  max_active=12
+283  active=6  max_active=12
+284  active=6  max_active=12
+285  active=8  max_active=12
+286  active=8  max_active=12
+287  active=8  max_active=12
+288  active=8  max_active=12
+289  active=8  max_active=12
+290  active=8  max_active=12
+291  active=8  max_active=12
+292  active=8  max_active=12
+293  active=8  max_active=12
+294  active=8  max_active=12
+295  active=9  max_active=12
+296  active=9  max_active=12
+297  active=9  max_active=12
+298  active=9  max_active=12
+299  active=9  max_active=12
+300  active=9  max_active=12
+301  active=9  max_active=12
+302  active=9  max_active=12
+303  active=9  max_active=12
+304  active=9  max_active=12
+305  active=9  max_active=12
+306  active=9  max_active=12
+307  active=9  max_active=12
+308  active=9  max_active=12
+309  active=9  max_active=12
+310  active=9  max_active=12
+311  active=9  max_active=12
+312  active=8  max_active=12
+313  active=8  max_active=12
+314  active=7  max_active=12
+315  active=7  max_active=12
+316  active=7  max_active=12
+317  active=7  max_active=12
+318  active=7  max_active=12
+319  active=7  max_active=12
+320  active=7  max_active=12
+321  active=7  max_active=12
+322  active=7  max_active=12
+323  active=7  max_active=12
+324  active=7  max_active=12
+325  active=7  max_active=12
+326  active=7  max_active=12
+327  active=7  max_active=12
+328  active=7  max_active=12
+329  active=7  max_active=12
+330  active=7  max_active=12
+331  active=7  max_active=12
+332  active=7  max_active=12
+333  active=7  max_active=12
+334  active=7  max_active=12
+335  active=7  max_active=12
+336  active=7  max_active=12
+337  active=7  max_active=12
+338  active=7  max_active=12
+339  active=7  max_active=12
+340  active=7  max_active=12
+341  active=7  max_active=12
+342  active=7  max_active=12
+343  active=7  max_active=12
+344  active=7  max_active=12
+345  active=7  max_active=12
+346  active=7  max_active=12
+347  active=7  max_active=12
+348  active=7  max_active=12
+349  active=7  max_active=12
+350  active=7  max_active=12
+351  active=7  max_active=12
+352  active=7  max_active=12
+353  active=7  max_active=12
+354  active=7  max_active=12
+355  active=6  max_active=12
+356  active=6  max_active=12
+357  active=6  max_active=12
+358  active=6  max_active=12
+359  active=6  max_active=12
+360  active=6  max_active=12
+361  active=6  max_active=12
+362  active=6  max_active=12
+363  active=6  max_active=12
+364  active=7  max_active=12
+365  active=5  max_active=12
+366  active=7  max_active=17
+367  active=7  max_active=17
+368  active=6  max_active=17
+369  active=3  max_active=17
+370  active=3  max_active=17
+371  active=7  max_active=17
+372  active=6  max_active=17
+373  active=6  max_active=17
+374  active=5  max_active=17
+375  active=6  max_active=17
+376  active=6  max_active=17
+377  active=6  max_active=17
+378  active=9  max_active=17
+379  active=6  max_active=17
+380  active=10  max_active=17
+381  active=4  max_active=17
+382  active=2  max_active=17
+383  active=2  max_active=17
+384  active=2  max_active=17
+385  active=2  max_active=17
+386  active=5  max_active=17
+387  active=5  max_active=17
+388  active=1  max_active=17
+389  active=0  max_active=17
+390  active=3  max_active=17
+391  active=3  max_active=17
+392  active=7  max_active=17
+393  active=8  max_active=17
+394  active=1  max_active=17
+395  active=0  max_active=17
+396  active=0  max_active=17
+397  active=0  max_active=17
+398  active=0  max_active=17
+399  active=1  max_active=17
+400  active=1  max_active=17
+
+=== Final max concurrent RAND_bytes calls: 17 ===
+
+=== RAND_bytes call duration histogram (ns) ===
+@duration_ns:
+[4K, 8K)            6125 |@@@@@                                               |
+[8K, 16K)          58049 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16K, 32K)         11946 |@@@@@@@@@@                                          |
+[32K, 64K)           875 |                                                    |
+[64K, 128K)           46 |                                                    |
+[128K, 256K)           3 |                                                    |
+[256K, 512K)           3 |                                                    |
+[512K, 1M)             2 |                                                    |
+[1M, 2M)               2 |                                                    |
+
+
+
+17:22:26 capture done (pid=643485)
+17:33:11 === new kube-apiserver pid=654296 ===
+17:33:11 capturing for 400s (pid=654296)...
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:30:29-34: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                            ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:30:37-48: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                                    ~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:37:51-56: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:37:59-65: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                          ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:38:10-15: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:38:18-24: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+                 ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_654296.bt:31:9-28: WARNING: Return value discarded.
+        delete(@entry[tid]);
+        ~~~~~~~~~~~~~~~~~~~
+WARNING: Kernel version (5.14.0-730.el9.x86_64) is lower than the minimum supported kernel version (5.15.0). Some features/scripts may not work as expected.
+Attached 5 probes
+Tracing RAND_bytes for PID 654296 for 400 seconds...
+1  active=0  max_active=1
+2  active=0  max_active=2
+3  active=0  max_active=2
+4  active=0  max_active=2
+5  active=0  max_active=2
+6  active=1  max_active=3
+7  active=1  max_active=3
+8  active=1  max_active=3
+9  active=1  max_active=3
+10  active=1  max_active=3
+11  active=1  max_active=3
+12  active=1  max_active=3
+13  active=1  max_active=3
+14  active=1  max_active=3
+15  active=1  max_active=3
+16  active=1  max_active=3
+17  active=1  max_active=3
+18  active=1  max_active=3
+19  active=1  max_active=3
+20  active=1  max_active=3
+21  active=1  max_active=3
+22  active=1  max_active=3
+23  active=1  max_active=3
+24  active=1  max_active=3
+25  active=1  max_active=3
+26  active=0  max_active=3
+27  active=0  max_active=3
+28  active=0  max_active=3
+29  active=1  max_active=4
+30  active=1  max_active=4
+31  active=1  max_active=4
+32  active=1  max_active=4
+33  active=1  max_active=4
+34  active=1  max_active=4
+35  active=1  max_active=4
+36  active=1  max_active=4
+37  active=1  max_active=4
+38  active=1  max_active=4
+39  active=1  max_active=4
+40  active=1  max_active=4
+41  active=1  max_active=4
+42  active=1  max_active=4
+43  active=1  max_active=4
+44  active=1  max_active=4
+45  active=1  max_active=4
+46  active=1  max_active=4
+47  active=1  max_active=4
+48  active=1  max_active=4
+49  active=1  max_active=4
+50  active=1  max_active=4
+51  active=1  max_active=4
+52  active=1  max_active=4
+53  active=1  max_active=4
+54  active=1  max_active=4
+55  active=1  max_active=4
+56  active=1  max_active=4
+57  active=1  max_active=4
+58  active=1  max_active=4
+59  active=1  max_active=4
+60  active=1  max_active=4
+61  active=1  max_active=4
+62  active=1  max_active=4
+63  active=1  max_active=4
+64  active=1  max_active=4
+65  active=1  max_active=4
+66  active=1  max_active=4
+67  active=1  max_active=4
+68  active=1  max_active=4
+69  active=1  max_active=4
+70  active=1  max_active=4
+71  active=1  max_active=4
+72  active=1  max_active=4
+73  active=1  max_active=4
+74  active=1  max_active=4
+75  active=1  max_active=4
+76  active=1  max_active=4
+77  active=1  max_active=4
+78  active=1  max_active=4
+79  active=1  max_active=4
+80  active=1  max_active=4
+81  active=1  max_active=4
+82  active=1  max_active=4
+83  active=1  max_active=4
+84  active=1  max_active=4
+85  active=1  max_active=4
+86  active=1  max_active=4
+87  active=1  max_active=4
+88  active=1  max_active=4
+89  active=1  max_active=4
+90  active=1  max_active=4
+91  active=1  max_active=4
+92  active=1  max_active=4
+93  active=1  max_active=4
+94  active=1  max_active=4
+95  active=1  max_active=4
+96  active=1  max_active=4
+97  active=1  max_active=4
+98  active=1  max_active=4
+99  active=1  max_active=4
+100  active=1  max_active=4
+101  active=1  max_active=4
+102  active=1  max_active=4
+103  active=1  max_active=4
+104  active=1  max_active=4
+105  active=1  max_active=4
+106  active=1  max_active=4
+107  active=1  max_active=4
+108  active=1  max_active=4
+109  active=1  max_active=4
+110  active=1  max_active=4
+111  active=1  max_active=4
+112  active=1  max_active=4
+113  active=1  max_active=4
+114  active=1  max_active=4
+115  active=1  max_active=4
+116  active=1  max_active=4
+117  active=1  max_active=5
+118  active=1  max_active=5
+119  active=1  max_active=5
+120  active=1  max_active=10
+121  active=3  max_active=10
+122  active=5  max_active=10
+123  active=5  max_active=10
+124  active=3  max_active=12
+125  active=3  max_active=12
+126  active=3  max_active=12
+127  active=3  max_active=12
+128  active=3  max_active=12
+129  active=0  max_active=12
+130  active=5  max_active=12
+131  active=5  max_active=12
+132  active=2  max_active=12
+133  active=11  max_active=14
+134  active=3  max_active=14
+135  active=11  max_active=14
+136  active=10  max_active=16
+137  active=9  max_active=16
+138  active=9  max_active=16
+139  active=9  max_active=16
+140  active=9  max_active=16
+141  active=15  max_active=18
+142  active=17  max_active=24
+143  active=16  max_active=24
+144  active=15  max_active=24
+145  active=18  max_active=24
+146  active=32  max_active=36
+147  active=24  max_active=36
+148  active=18  max_active=36
+149  active=19  max_active=36
+150  active=19  max_active=36
+151  active=12  max_active=36
+152  active=12  max_active=36
+153  active=13  max_active=36
+154  active=11  max_active=36
+155  active=8  max_active=36
+156  active=8  max_active=36
+157  active=10  max_active=36
+158  active=10  max_active=36
+159  active=10  max_active=36
+160  active=10  max_active=36
+161  active=12  max_active=36
+162  active=12  max_active=36
+163  active=12  max_active=36
+164  active=12  max_active=36
+165  active=11  max_active=36
+166  active=9  max_active=36
+167  active=2  max_active=36
+168  active=2  max_active=36
+169  active=2  max_active=36
+170  active=2  max_active=36
+171  active=2  max_active=36
+172  active=2  max_active=36
+173  active=2  max_active=36
+174  active=2  max_active=36
+175  active=2  max_active=36
+176  active=2  max_active=36
+177  active=2  max_active=36
+178  active=2  max_active=36
+179  active=2  max_active=36
+180  active=2  max_active=36
+181  active=2  max_active=36
+182  active=2  max_active=36
+183  active=2  max_active=36
+184  active=2  max_active=36
+185  active=2  max_active=36
+186  active=2  max_active=36
+187  active=2  max_active=36
+188  active=2  max_active=36
+189  active=2  max_active=36
+190  active=2  max_active=36
+191  active=2  max_active=36
+192  active=2  max_active=36
+193  active=2  max_active=36
+194  active=2  max_active=36
+195  active=2  max_active=36
+196  active=2  max_active=36
+197  active=2  max_active=36
+198  active=2  max_active=36
+199  active=2  max_active=36
+200  active=2  max_active=36
+201  active=2  max_active=36
+202  active=2  max_active=36
+203  active=2  max_active=36
+204  active=1  max_active=36
+205  active=1  max_active=36
+206  active=1  max_active=36
+207  active=1  max_active=36
+208  active=1  max_active=36
+209  active=1  max_active=36
+210  active=1  max_active=36
+211  active=1  max_active=36
+212  active=1  max_active=36
+213  active=1  max_active=36
+214  active=1  max_active=36
+215  active=1  max_active=36
+216  active=1  max_active=36
+217  active=1  max_active=36
+218  active=1  max_active=36
+219  active=1  max_active=36
+220  active=1  max_active=36
+221  active=3  max_active=36
+222  active=3  max_active=36
+223  active=3  max_active=36
+224  active=3  max_active=36
+225  active=3  max_active=36
+226  active=2  max_active=36
+227  active=2  max_active=36
+228  active=2  max_active=36
+229  active=2  max_active=36
+230  active=2  max_active=36
+231  active=2  max_active=36
+232  active=2  max_active=36
+233  active=2  max_active=36
+234  active=2  max_active=36
+235  active=2  max_active=36
+236  active=2  max_active=36
+237  active=2  max_active=36
+238  active=2  max_active=36
+239  active=2  max_active=36
+240  active=2  max_active=36
+241  active=3  max_active=36
+242  active=3  max_active=36
+243  active=3  max_active=36
+244  active=3  max_active=36
+245  active=3  max_active=36
+246  active=3  max_active=36
+247  active=3  max_active=36
+248  active=3  max_active=36
+249  active=3  max_active=36
+250  active=3  max_active=36
+251  active=3  max_active=36
+252  active=3  max_active=36
+253  active=3  max_active=36
+254  active=3  max_active=36
+255  active=3  max_active=36
+256  active=3  max_active=36
+257  active=3  max_active=36
+258  active=3  max_active=36
+259  active=3  max_active=36
+260  active=3  max_active=36
+261  active=3  max_active=36
+262  active=3  max_active=36
+263  active=3  max_active=36
+264  active=3  max_active=36
+265  active=3  max_active=36
+266  active=3  max_active=36
+267  active=3  max_active=36
+268  active=3  max_active=36
+269  active=1  max_active=36
+270  active=1  max_active=36
+271  active=1  max_active=36
+272  active=1  max_active=36
+273  active=1  max_active=36
+274  active=1  max_active=36
+275  active=0  max_active=36
+276  active=0  max_active=36
+277  active=0  max_active=36
+278  active=0  max_active=36
+279  active=0  max_active=36
+280  active=0  max_active=36
+281  active=0  max_active=36
+282  active=0  max_active=36
+283  active=0  max_active=36
+284  active=0  max_active=36
+285  active=0  max_active=36
+286  active=0  max_active=36
+287  active=0  max_active=36
+288  active=0  max_active=36
+289  active=0  max_active=36
+290  active=0  max_active=36
+291  active=0  max_active=36
+292  active=0  max_active=36
+293  active=0  max_active=36
+294  active=0  max_active=36
+295  active=0  max_active=36
+296  active=0  max_active=36
+297  active=0  max_active=36
+298  active=0  max_active=36
+299  active=0  max_active=36
+300  active=0  max_active=36
+301  active=0  max_active=36
+302  active=0  max_active=36
+303  active=0  max_active=36
+304  active=0  max_active=36
+305  active=0  max_active=36
+306  active=0  max_active=36
+307  active=0  max_active=36
+308  active=0  max_active=36
+309  active=0  max_active=36
+310  active=0  max_active=36
+311  active=0  max_active=36
+312  active=0  max_active=36
+313  active=0  max_active=36
+314  active=0  max_active=36
+315  active=0  max_active=36
+316  active=0  max_active=36
+317  active=0  max_active=36
+318  active=0  max_active=36
+319  active=0  max_active=36
+320  active=0  max_active=36
+321  active=0  max_active=36
+322  active=0  max_active=36
+323  active=0  max_active=36
+324  active=0  max_active=36
+325  active=0  max_active=36
+326  active=0  max_active=36
+327  active=0  max_active=36
+328  active=0  max_active=36
+329  active=0  max_active=36
+330  active=0  max_active=36
+331  active=0  max_active=36
+332  active=0  max_active=36
+333  active=0  max_active=36
+334  active=0  max_active=36
+335  active=0  max_active=36
+336  active=0  max_active=36
+337  active=0  max_active=36
+338  active=0  max_active=36
+339  active=0  max_active=36
+340  active=0  max_active=36
+341  active=0  max_active=36
+342  active=0  max_active=36
+343  active=3  max_active=36
+344  active=3  max_active=36
+345  active=0  max_active=36
+346  active=0  max_active=36
+347  active=0  max_active=36
+348  active=0  max_active=36
+349  active=0  max_active=36
+350  active=6  max_active=36
+351  active=6  max_active=36
+352  active=9  max_active=36
+353  active=7  max_active=36
+354  active=5  max_active=36
+355  active=4  max_active=36
+356  active=2  max_active=36
+357  active=1  max_active=36
+358  active=4  max_active=36
+359  active=3  max_active=36
+360  active=1  max_active=36
+361  active=2  max_active=36
+362  active=3  max_active=36
+363  active=6  max_active=36
+364  active=10  max_active=36
+365  active=14  max_active=36
+366  active=14  max_active=36
+367  active=13  max_active=36
+368  active=13  max_active=36
+369  active=13  max_active=36
+370  active=7  max_active=36
+371  active=6  max_active=36
+372  active=7  max_active=36
+373  active=7  max_active=36
+374  active=7  max_active=36
+375  active=8  max_active=36
+376  active=6  max_active=36
+377  active=6  max_active=36
+378  active=4  max_active=36
+379  active=4  max_active=36
+380  active=3  max_active=36
+381  active=0  max_active=36
+382  active=1  max_active=36
+383  active=1  max_active=36
+384  active=6  max_active=36
+385  active=2  max_active=36
+386  active=2  max_active=36
+387  active=2  max_active=36
+388  active=2  max_active=36
+389  active=2  max_active=36
+390  active=2  max_active=36
+391  active=2  max_active=36
+392  active=4  max_active=36
+393  active=5  max_active=36
+394  active=5  max_active=36
+395  active=4  max_active=36
+396  active=2  max_active=36
+397  active=2  max_active=36
+398  active=2  max_active=36
+399  active=0  max_active=36
+400  active=0  max_active=36
+
+=== Final max concurrent RAND_bytes calls: 36 ===
+
+=== RAND_bytes call duration histogram (ns) ===
+@duration_ns:
+[4K, 8K)            5653 |@@@@                                                |
+[8K, 16K)          71034 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16K, 32K)         14116 |@@@@@@@@@@                                          |
+[32K, 64K)          1075 |                                                    |
+[64K, 128K)           46 |                                                    |
+[128K, 256K)           4 |                                                    |
+[256K, 512K)           2 |                                                    |
+[512K, 1M)             5 |                                                    |
+[1M, 2M)               2 |                                                    |
+[2M, 4M)               3 |                                                    |
+[4M, 8M)               3 |                                                    |
+
+
+
+17:39:53 capture done (pid=654296)
+17:50:46 === new kube-apiserver pid=665121 ===
+17:50:46 capturing for 400s (pid=665121)...
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:30:29-34: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                            ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:30:37-48: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                                    ~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:37:51-56: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:37:59-65: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                          ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:38:10-15: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:38:18-24: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+                 ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_665121.bt:31:9-28: WARNING: Return value discarded.
+        delete(@entry[tid]);
+        ~~~~~~~~~~~~~~~~~~~
+WARNING: Kernel version (5.14.0-730.el9.x86_64) is lower than the minimum supported kernel version (5.15.0). Some features/scripts may not work as expected.
+Attached 5 probes
+Tracing RAND_bytes for PID 665121 for 400 seconds...
+1  active=0  max_active=2
+2  active=0  max_active=2
+3  active=0  max_active=2
+4  active=0  max_active=2
+5  active=0  max_active=2
+6  active=0  max_active=2
+7  active=0  max_active=2
+8  active=0  max_active=2
+9  active=0  max_active=2
+10  active=0  max_active=2
+11  active=0  max_active=2
+12  active=0  max_active=2
+13  active=0  max_active=2
+14  active=0  max_active=2
+15  active=0  max_active=2
+16  active=0  max_active=2
+17  active=0  max_active=2
+18  active=0  max_active=2
+19  active=0  max_active=2
+20  active=0  max_active=2
+21  active=0  max_active=2
+22  active=0  max_active=2
+23  active=0  max_active=2
+24  active=0  max_active=2
+25  active=0  max_active=2
+26  active=0  max_active=2
+27  active=0  max_active=2
+28  active=0  max_active=2
+29  active=0  max_active=2
+30  active=0  max_active=2
+31  active=0  max_active=2
+32  active=0  max_active=2
+33  active=0  max_active=2
+34  active=0  max_active=2
+35  active=0  max_active=2
+36  active=0  max_active=2
+37  active=0  max_active=2
+38  active=0  max_active=2
+39  active=0  max_active=2
+40  active=0  max_active=2
+41  active=0  max_active=2
+42  active=0  max_active=2
+43  active=0  max_active=2
+44  active=0  max_active=2
+45  active=0  max_active=2
+46  active=0  max_active=2
+47  active=0  max_active=2
+48  active=0  max_active=2
+49  active=0  max_active=2
+50  active=0  max_active=2
+51  active=0  max_active=2
+52  active=0  max_active=2
+53  active=0  max_active=2
+54  active=0  max_active=2
+55  active=0  max_active=2
+56  active=0  max_active=2
+57  active=0  max_active=2
+58  active=0  max_active=2
+59  active=1  max_active=4
+60  active=1  max_active=4
+61  active=1  max_active=4
+62  active=1  max_active=4
+63  active=1  max_active=4
+64  active=1  max_active=4
+65  active=1  max_active=4
+66  active=1  max_active=4
+67  active=1  max_active=4
+68  active=1  max_active=4
+69  active=1  max_active=4
+70  active=1  max_active=4
+71  active=1  max_active=4
+72  active=1  max_active=4
+73  active=1  max_active=4
+74  active=2  max_active=4
+75  active=2  max_active=4
+76  active=2  max_active=4
+77  active=2  max_active=4
+78  active=3  max_active=4
+79  active=3  max_active=5
+80  active=3  max_active=5
+81  active=3  max_active=5
+82  active=3  max_active=5
+83  active=3  max_active=5
+84  active=3  max_active=5
+85  active=4  max_active=5
+86  active=4  max_active=6
+87  active=4  max_active=6
+88  active=4  max_active=6
+89  active=5  max_active=7
+90  active=5  max_active=7
+91  active=5  max_active=7
+92  active=5  max_active=7
+93  active=5  max_active=7
+94  active=5  max_active=7
+95  active=5  max_active=7
+96  active=5  max_active=7
+97  active=5  max_active=7
+98  active=5  max_active=7
+99  active=5  max_active=7
+100  active=5  max_active=7
+101  active=5  max_active=8
+102  active=5  max_active=8
+103  active=5  max_active=8
+104  active=5  max_active=8
+105  active=5  max_active=8
+106  active=5  max_active=8
+107  active=5  max_active=8
+108  active=5  max_active=8
+109  active=5  max_active=8
+110  active=5  max_active=8
+111  active=5  max_active=8
+112  active=6  max_active=10
+113  active=0  max_active=15
+114  active=1  max_active=15
+115  active=0  max_active=15
+116  active=0  max_active=15
+117  active=0  max_active=15
+118  active=1  max_active=15
+119  active=0  max_active=15
+120  active=2  max_active=15
+121  active=1  max_active=15
+122  active=1  max_active=15
+123  active=8  max_active=15
+124  active=4  max_active=15
+125  active=3  max_active=15
+126  active=3  max_active=15
+127  active=0  max_active=15
+128  active=0  max_active=15
+129  active=0  max_active=15
+130  active=0  max_active=15
+131  active=0  max_active=15
+132  active=1  max_active=15
+133  active=0  max_active=15
+134  active=1  max_active=15
+135  active=0  max_active=15
+136  active=0  max_active=15
+137  active=6  max_active=15
+138  active=6  max_active=15
+139  active=6  max_active=15
+140  active=6  max_active=15
+141  active=7  max_active=17
+142  active=7  max_active=17
+143  active=7  max_active=17
+144  active=7  max_active=17
+145  active=8  max_active=17
+146  active=10  max_active=17
+147  active=6  max_active=17
+148  active=8  max_active=17
+149  active=8  max_active=17
+150  active=7  max_active=17
+151  active=7  max_active=17
+152  active=6  max_active=17
+153  active=6  max_active=17
+154  active=0  max_active=17
+155  active=4  max_active=17
+156  active=4  max_active=17
+157  active=5  max_active=17
+158  active=5  max_active=17
+159  active=5  max_active=17
+160  active=5  max_active=17
+161  active=5  max_active=17
+162  active=7  max_active=17
+163  active=7  max_active=17
+164  active=7  max_active=17
+165  active=8  max_active=17
+166  active=4  max_active=17
+167  active=5  max_active=17
+168  active=5  max_active=17
+169  active=6  max_active=17
+170  active=7  max_active=17
+171  active=7  max_active=17
+172  active=7  max_active=17
+173  active=7  max_active=17
+174  active=7  max_active=17
+175  active=7  max_active=17
+176  active=7  max_active=17
+177  active=8  max_active=17
+178  active=7  max_active=17
+179  active=6  max_active=17
+180  active=7  max_active=17
+181  active=8  max_active=17
+182  active=8  max_active=17
+183  active=7  max_active=17
+184  active=8  max_active=17
+185  active=9  max_active=17
+186  active=10  max_active=17
+187  active=10  max_active=17
+188  active=10  max_active=17
+189  active=10  max_active=17
+190  active=10  max_active=17
+191  active=10  max_active=17
+192  active=10  max_active=17
+193  active=10  max_active=17
+194  active=10  max_active=17
+195  active=8  max_active=17
+196  active=8  max_active=17
+197  active=9  max_active=17
+198  active=9  max_active=17
+199  active=9  max_active=17
+200  active=9  max_active=17
+201  active=8  max_active=17
+202  active=8  max_active=17
+203  active=8  max_active=17
+204  active=8  max_active=17
+205  active=8  max_active=17
+206  active=8  max_active=17
+207  active=8  max_active=17
+208  active=8  max_active=17
+209  active=8  max_active=17
+210  active=8  max_active=17
+211  active=9  max_active=17
+212  active=8  max_active=17
+213  active=9  max_active=17
+214  active=9  max_active=17
+215  active=8  max_active=17
+216  active=9  max_active=17
+217  active=9  max_active=17
+218  active=10  max_active=17
+219  active=10  max_active=17
+220  active=10  max_active=17
+221  active=10  max_active=17
+222  active=11  max_active=17
+223  active=10  max_active=17
+224  active=10  max_active=17
+225  active=10  max_active=17
+226  active=10  max_active=17
+227  active=9  max_active=17
+228  active=9  max_active=17
+229  active=9  max_active=17
+230  active=9  max_active=17
+231  active=11  max_active=17
+232  active=11  max_active=17
+233  active=11  max_active=17
+234  active=11  max_active=17
+235  active=11  max_active=17
+236  active=12  max_active=17
+237  active=11  max_active=17
+238  active=11  max_active=17
+239  active=11  max_active=17
+240  active=11  max_active=17
+241  active=11  max_active=17
+242  active=11  max_active=17
+243  active=10  max_active=17
+244  active=10  max_active=17
+245  active=10  max_active=17
+246  active=10  max_active=17
+247  active=10  max_active=17
+248  active=10  max_active=17
+249  active=12  max_active=17
+250  active=12  max_active=17
+251  active=12  max_active=17
+252  active=12  max_active=17
+253  active=12  max_active=17
+254  active=12  max_active=17
+255  active=11  max_active=17
+256  active=10  max_active=17
+257  active=10  max_active=17
+258  active=10  max_active=17
+259  active=10  max_active=17
+260  active=10  max_active=17
+261  active=10  max_active=17
+262  active=10  max_active=17
+263  active=10  max_active=17
+264  active=9  max_active=17
+265  active=9  max_active=17
+266  active=9  max_active=17
+267  active=9  max_active=17
+268  active=9  max_active=17
+269  active=7  max_active=17
+270  active=7  max_active=17
+271  active=8  max_active=17
+272  active=8  max_active=17
+273  active=6  max_active=17
+274  active=6  max_active=17
+275  active=6  max_active=17
+276  active=6  max_active=17
+277  active=6  max_active=17
+278  active=6  max_active=17
+279  active=6  max_active=17
+280  active=6  max_active=17
+281  active=6  max_active=17
+282  active=6  max_active=17
+283  active=6  max_active=17
+284  active=6  max_active=17
+285  active=6  max_active=17
+286  active=6  max_active=17
+287  active=6  max_active=17
+288  active=5  max_active=17
+289  active=5  max_active=17
+290  active=5  max_active=17
+291  active=4  max_active=17
+292  active=5  max_active=17
+293  active=5  max_active=17
+294  active=5  max_active=17
+295  active=5  max_active=17
+296  active=5  max_active=17
+297  active=5  max_active=17
+298  active=7  max_active=17
+299  active=7  max_active=17
+300  active=6  max_active=17
+301  active=6  max_active=17
+302  active=6  max_active=17
+303  active=6  max_active=17
+304  active=6  max_active=17
+305  active=6  max_active=17
+306  active=6  max_active=17
+307  active=6  max_active=17
+308  active=6  max_active=17
+309  active=7  max_active=17
+310  active=7  max_active=17
+311  active=7  max_active=17
+312  active=7  max_active=17
+313  active=6  max_active=17
+314  active=6  max_active=17
+315  active=5  max_active=17
+316  active=5  max_active=17
+317  active=5  max_active=17
+318  active=5  max_active=17
+319  active=6  max_active=17
+320  active=8  max_active=17
+321  active=9  max_active=17
+322  active=9  max_active=17
+323  active=9  max_active=17
+324  active=8  max_active=17
+325  active=8  max_active=17
+326  active=8  max_active=17
+327  active=8  max_active=17
+328  active=8  max_active=17
+329  active=9  max_active=17
+330  active=8  max_active=17
+331  active=8  max_active=17
+332  active=8  max_active=17
+333  active=8  max_active=17
+334  active=8  max_active=17
+335  active=8  max_active=17
+336  active=8  max_active=17
+337  active=8  max_active=17
+338  active=8  max_active=17
+339  active=8  max_active=17
+340  active=8  max_active=17
+341  active=8  max_active=17
+342  active=8  max_active=17
+343  active=8  max_active=17
+344  active=8  max_active=17
+345  active=7  max_active=17
+346  active=8  max_active=17
+347  active=7  max_active=17
+348  active=15  max_active=18
+349  active=14  max_active=22
+350  active=10  max_active=22
+351  active=5  max_active=22
+352  active=0  max_active=22
+353  active=0  max_active=22
+354  active=5  max_active=22
+355  active=5  max_active=22
+356  active=7  max_active=22
+357  active=8  max_active=22
+358  active=8  max_active=22
+359  active=8  max_active=22
+360  active=5  max_active=22
+361  active=0  max_active=22
+362  active=0  max_active=22
+363  active=1  max_active=22
+364  active=1  max_active=22
+365  active=0  max_active=22
+366  active=1  max_active=22
+367  active=1  max_active=22
+368  active=1  max_active=22
+369  active=1  max_active=22
+370  active=1  max_active=22
+371  active=1  max_active=22
+372  active=1  max_active=22
+373  active=3  max_active=22
+374  active=6  max_active=22
+375  active=1  max_active=22
+376  active=3  max_active=22
+377  active=2  max_active=22
+378  active=0  max_active=22
+379  active=0  max_active=22
+380  active=2  max_active=22
+381  active=2  max_active=22
+382  active=1  max_active=22
+383  active=1  max_active=22
+384  active=1  max_active=22
+385  active=1  max_active=22
+386  active=1  max_active=22
+387  active=1  max_active=22
+388  active=7  max_active=22
+389  active=7  max_active=22
+390  active=7  max_active=22
+391  active=5  max_active=22
+392  active=5  max_active=22
+393  active=5  max_active=22
+394  active=5  max_active=22
+395  active=5  max_active=22
+396  active=5  max_active=22
+397  active=5  max_active=22
+398  active=5  max_active=22
+399  active=6  max_active=22
+400  active=6  max_active=22
+
+=== Final max concurrent RAND_bytes calls: 521 ===
+
+=== RAND_bytes call duration histogram (ns) ===
+@duration_ns:
+[4K, 8K)            6958 |@@@                                                 |
+[8K, 16K)          90596 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16K, 32K)         14309 |@@@@@@@@                                            |
+[32K, 64K)          1158 |                                                    |
+[64K, 128K)           39 |                                                    |
+[128K, 256K)           6 |                                                    |
+[256K, 512K)           1 |                                                    |
+[512K, 1M)             2 |                                                    |
+[1M, 2M)               2 |                                                    |
+[2M, 4M)               0 |                                                    |
+[4M, 8M)               1 |                                                    |
+
+
+
+17:57:29 capture done (pid=665121)
+18:08:03 === new kube-apiserver pid=676265 ===
+18:08:03 capturing for 400s (pid=676265)...
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:30:29-34: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                            ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:30:37-48: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                                    ~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:37:51-56: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:37:59-65: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                          ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:38:10-15: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:38:18-24: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+                 ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_676265.bt:31:9-28: WARNING: Return value discarded.
+        delete(@entry[tid]);
+        ~~~~~~~~~~~~~~~~~~~
+WARNING: Kernel version (5.14.0-730.el9.x86_64) is lower than the minimum supported kernel version (5.15.0). Some features/scripts may not work as expected.
+Attached 5 probes
+Tracing RAND_bytes for PID 676265 for 400 seconds...
+1  active=0  max_active=2
+2  active=0  max_active=2
+3  active=0  max_active=2
+4  active=0  max_active=2
+5  active=0  max_active=2
+6  active=0  max_active=2
+7  active=0  max_active=2
+8  active=0  max_active=2
+9  active=0  max_active=2
+10  active=0  max_active=2
+11  active=0  max_active=2
+12  active=0  max_active=2
+13  active=0  max_active=2
+14  active=0  max_active=2
+15  active=0  max_active=2
+16  active=0  max_active=2
+17  active=0  max_active=2
+18  active=0  max_active=2
+19  active=0  max_active=2
+20  active=0  max_active=2
+21  active=0  max_active=2
+22  active=0  max_active=2
+23  active=0  max_active=2
+24  active=0  max_active=2
+25  active=0  max_active=2
+26  active=0  max_active=2
+27  active=0  max_active=2
+28  active=0  max_active=2
+29  active=0  max_active=2
+30  active=1  max_active=4
+31  active=1  max_active=4
+32  active=1  max_active=4
+33  active=0  max_active=7
+34  active=0  max_active=7
+35  active=0  max_active=7
+36  active=0  max_active=7
+37  active=0  max_active=7
+38  active=0  max_active=7
+39  active=0  max_active=7
+40  active=0  max_active=7
+41  active=0  max_active=7
+42  active=0  max_active=7
+43  active=0  max_active=7
+44  active=0  max_active=7
+45  active=0  max_active=7
+46  active=0  max_active=7
+47  active=1  max_active=7
+48  active=1  max_active=7
+49  active=1  max_active=7
+50  active=1  max_active=7
+51  active=1  max_active=7
+52  active=1  max_active=7
+53  active=1  max_active=7
+54  active=1  max_active=7
+55  active=1  max_active=7
+56  active=1  max_active=7
+57  active=1  max_active=7
+58  active=1  max_active=7
+59  active=1  max_active=7
+60  active=1  max_active=7
+61  active=1  max_active=7
+62  active=1  max_active=7
+63  active=1  max_active=7
+64  active=1  max_active=7
+65  active=1  max_active=7
+66  active=1  max_active=7
+67  active=1  max_active=7
+68  active=1  max_active=7
+69  active=1  max_active=7
+70  active=1  max_active=7
+71  active=1  max_active=7
+72  active=1  max_active=7
+73  active=1  max_active=7
+74  active=1  max_active=7
+75  active=1  max_active=7
+76  active=1  max_active=7
+77  active=1  max_active=7
+78  active=1  max_active=7
+79  active=1  max_active=7
+80  active=1  max_active=7
+81  active=1  max_active=7
+82  active=1  max_active=7
+83  active=1  max_active=7
+84  active=1  max_active=7
+85  active=1  max_active=7
+86  active=1  max_active=7
+87  active=2  max_active=7
+88  active=2  max_active=7
+89  active=2  max_active=7
+90  active=2  max_active=7
+91  active=2  max_active=7
+92  active=2  max_active=7
+93  active=2  max_active=7
+94  active=3  max_active=7
+95  active=3  max_active=7
+96  active=3  max_active=7
+97  active=3  max_active=7
+98  active=4  max_active=7
+99  active=5  max_active=7
+100  active=5  max_active=7
+101  active=5  max_active=7
+102  active=5  max_active=7
+103  active=5  max_active=7
+104  active=6  max_active=8
+105  active=8  max_active=10
+106  active=8  max_active=10
+107  active=8  max_active=10
+108  active=8  max_active=10
+109  active=8  max_active=10
+110  active=8  max_active=10
+111  active=8  max_active=10
+112  active=8  max_active=10
+113  active=8  max_active=10
+114  active=8  max_active=10
+115  active=8  max_active=10
+116  active=8  max_active=10
+117  active=7  max_active=10
+118  active=7  max_active=10
+119  active=6  max_active=13
+120  active=6  max_active=13
+121  active=6  max_active=13
+122  active=6  max_active=16
+123  active=4  max_active=16
+124  active=4  max_active=16
+125  active=3  max_active=16
+126  active=0  max_active=16
+127  active=0  max_active=16
+128  active=7  max_active=16
+129  active=4  max_active=16
+130  active=2  max_active=16
+131  active=1  max_active=16
+132  active=1  max_active=16
+133  active=0  max_active=16
+134  active=0  max_active=16
+135  active=1  max_active=16
+136  active=0  max_active=16
+137  active=0  max_active=16
+138  active=2  max_active=16
+139  active=10  max_active=16
+140  active=10  max_active=16
+141  active=11  max_active=16
+142  active=11  max_active=16
+143  active=12  max_active=17
+144  active=0  max_active=17
+145  active=0  max_active=17
+146  active=0  max_active=17
+147  active=0  max_active=17
+148  active=0  max_active=17
+149  active=2  max_active=17
+150  active=0  max_active=17
+151  active=0  max_active=17
+152  active=2  max_active=17
+153  active=0  max_active=17
+154  active=0  max_active=17
+155  active=0  max_active=17
+156  active=0  max_active=17
+157  active=0  max_active=17
+158  active=1  max_active=17
+159  active=4  max_active=17
+160  active=4  max_active=17
+161  active=4  max_active=17
+162  active=5  max_active=17
+163  active=15  max_active=20
+164  active=24  max_active=28
+165  active=27  max_active=30
+166  active=26  max_active=30
+167  active=26  max_active=31
+168  active=25  max_active=31
+169  active=23  max_active=31
+170  active=23  max_active=31
+171  active=21  max_active=31
+172  active=21  max_active=31
+173  active=21  max_active=31
+174  active=21  max_active=31
+175  active=21  max_active=31
+176  active=19  max_active=31
+177  active=19  max_active=31
+178  active=19  max_active=31
+179  active=19  max_active=31
+180  active=19  max_active=31
+181  active=17  max_active=31
+182  active=17  max_active=31
+183  active=17  max_active=31
+184  active=17  max_active=31
+185  active=17  max_active=31
+186  active=17  max_active=31
+187  active=17  max_active=31
+188  active=17  max_active=31
+189  active=17  max_active=31
+190  active=18  max_active=31
+191  active=18  max_active=31
+192  active=19  max_active=31
+193  active=19  max_active=31
+194  active=19  max_active=31
+195  active=19  max_active=31
+196  active=19  max_active=31
+197  active=19  max_active=31
+198  active=19  max_active=31
+199  active=19  max_active=31
+200  active=19  max_active=31
+201  active=18  max_active=31
+202  active=18  max_active=31
+203  active=19  max_active=31
+204  active=19  max_active=31
+205  active=19  max_active=31
+206  active=19  max_active=31
+207  active=19  max_active=31
+208  active=18  max_active=31
+209  active=17  max_active=31
+210  active=18  max_active=31
+211  active=18  max_active=31
+212  active=18  max_active=31
+213  active=18  max_active=31
+214  active=17  max_active=31
+215  active=17  max_active=31
+216  active=17  max_active=31
+217  active=17  max_active=31
+218  active=16  max_active=31
+219  active=16  max_active=31
+220  active=17  max_active=31
+221  active=13  max_active=31
+222  active=13  max_active=31
+223  active=11  max_active=31
+224  active=11  max_active=31
+225  active=13  max_active=31
+226  active=13  max_active=31
+227  active=14  max_active=31
+228  active=14  max_active=31
+229  active=14  max_active=31
+230  active=14  max_active=31
+231  active=14  max_active=31
+232  active=14  max_active=31
+233  active=14  max_active=31
+234  active=13  max_active=31
+235  active=12  max_active=31
+236  active=12  max_active=31
+237  active=12  max_active=31
+238  active=12  max_active=31
+239  active=12  max_active=31
+240  active=12  max_active=31
+241  active=12  max_active=31
+242  active=13  max_active=31
+243  active=13  max_active=31
+244  active=13  max_active=31
+245  active=13  max_active=31
+246  active=13  max_active=31
+247  active=13  max_active=31
+248  active=12  max_active=31
+249  active=13  max_active=31
+250  active=12  max_active=31
+251  active=12  max_active=31
+252  active=12  max_active=31
+253  active=12  max_active=31
+254  active=12  max_active=31
+255  active=12  max_active=31
+256  active=12  max_active=31
+257  active=12  max_active=31
+258  active=12  max_active=31
+259  active=12  max_active=31
+260  active=12  max_active=31
+261  active=12  max_active=31
+262  active=12  max_active=31
+263  active=12  max_active=31
+264  active=12  max_active=31
+265  active=12  max_active=31
+266  active=12  max_active=31
+267  active=12  max_active=31
+268  active=12  max_active=31
+269  active=12  max_active=31
+270  active=12  max_active=31
+271  active=13  max_active=31
+272  active=13  max_active=31
+273  active=13  max_active=31
+274  active=13  max_active=31
+275  active=13  max_active=31
+276  active=13  max_active=31
+277  active=13  max_active=31
+278  active=13  max_active=31
+279  active=13  max_active=31
+280  active=13  max_active=31
+281  active=13  max_active=31
+282  active=13  max_active=31
+283  active=14  max_active=31
+284  active=14  max_active=31
+285  active=14  max_active=31
+286  active=14  max_active=31
+287  active=14  max_active=31
+288  active=14  max_active=31
+289  active=14  max_active=31
+290  active=14  max_active=31
+291  active=14  max_active=31
+292  active=14  max_active=31
+293  active=15  max_active=31
+294  active=15  max_active=31
+295  active=15  max_active=31
+296  active=15  max_active=31
+297  active=15  max_active=31
+298  active=15  max_active=31
+299  active=15  max_active=31
+300  active=15  max_active=31
+301  active=15  max_active=31
+302  active=15  max_active=31
+303  active=15  max_active=31
+304  active=15  max_active=31
+305  active=15  max_active=31
+306  active=15  max_active=31
+307  active=15  max_active=31
+308  active=15  max_active=31
+309  active=15  max_active=31
+310  active=15  max_active=31
+311  active=15  max_active=31
+312  active=15  max_active=31
+313  active=15  max_active=31
+314  active=15  max_active=31
+315  active=14  max_active=31
+316  active=14  max_active=31
+317  active=14  max_active=31
+318  active=14  max_active=31
+319  active=14  max_active=31
+320  active=14  max_active=31
+321  active=14  max_active=31
+322  active=13  max_active=31
+323  active=13  max_active=31
+324  active=13  max_active=31
+325  active=13  max_active=31
+326  active=13  max_active=31
+327  active=13  max_active=31
+328  active=13  max_active=31
+329  active=13  max_active=31
+330  active=14  max_active=31
+331  active=14  max_active=31
+332  active=14  max_active=31
+333  active=14  max_active=31
+334  active=14  max_active=31
+335  active=14  max_active=31
+336  active=14  max_active=31
+337  active=15  max_active=31
+338  active=15  max_active=31
+339  active=13  max_active=31
+340  active=13  max_active=31
+341  active=13  max_active=31
+342  active=13  max_active=31
+343  active=14  max_active=31
+344  active=14  max_active=31
+345  active=14  max_active=31
+346  active=14  max_active=31
+347  active=14  max_active=31
+348  active=14  max_active=31
+349  active=14  max_active=31
+350  active=14  max_active=31
+351  active=14  max_active=31
+352  active=14  max_active=31
+353  active=14  max_active=31
+354  active=14  max_active=31
+355  active=14  max_active=31
+356  active=14  max_active=31
+357  active=14  max_active=31
+358  active=14  max_active=31
+359  active=13  max_active=31
+360  active=0  max_active=31
+361  active=0  max_active=31
+362  active=10  max_active=31
+363  active=7  max_active=31
+364  active=5  max_active=31
+365  active=3  max_active=31
+366  active=9  max_active=31
+367  active=7  max_active=31
+368  active=2  max_active=31
+369  active=14  max_active=31
+370  active=13  max_active=31
+371  active=15  max_active=31
+372  active=15  max_active=31
+373  active=15  max_active=31
+374  active=14  max_active=31
+375  active=11  max_active=31
+376  active=11  max_active=31
+377  active=12  max_active=31
+378  active=30  max_active=34
+379  active=29  max_active=34
+380  active=27  max_active=37
+381  active=25  max_active=37
+382  active=24  max_active=37
+383  active=24  max_active=37
+384  active=22  max_active=37
+385  active=24  max_active=37
+386  active=23  max_active=37
+387  active=10  max_active=37
+388  active=10  max_active=37
+389  active=10  max_active=37
+390  active=20  max_active=37
+391  active=21  max_active=37
+392  active=31  max_active=37
+393  active=28  max_active=37
+394  active=28  max_active=37
+395  active=29  max_active=37
+396  active=29  max_active=37
+397  active=27  max_active=37
+398  active=24  max_active=37
+399  active=24  max_active=37
+400  active=27  max_active=37
+
+=== Final max concurrent RAND_bytes calls: 172 ===
+
+=== RAND_bytes call duration histogram (ns) ===
+@duration_ns:
+[4K, 8K)            8019 |@@@                                                 |
+[8K, 16K)         106304 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16K, 32K)         16827 |@@@@@@@@                                            |
+[32K, 64K)          1343 |                                                    |
+[64K, 128K)           58 |                                                    |
+[128K, 256K)           5 |                                                    |
+[256K, 512K)           2 |                                                    |
+[512K, 1M)             2 |                                                    |
+[1M, 2M)               2 |                                                    |
+[2M, 4M)               2 |                                                    |
+[4M, 8M)               2 |                                                    |
+
+
+
+18:14:46 capture done (pid=676265)
+18:22:06 === new kube-apiserver pid=684704 ===
+18:22:06 capturing for 400s (pid=684704)...
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:30:29-34: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                            ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:30:37-48: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                                    ~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:37:51-56: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:37:59-65: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                          ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:38:10-15: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:38:18-24: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+                 ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_684704.bt:31:9-28: WARNING: Return value discarded.
+        delete(@entry[tid]);
+        ~~~~~~~~~~~~~~~~~~~
+WARNING: Kernel version (5.14.0-730.el9.x86_64) is lower than the minimum supported kernel version (5.15.0). Some features/scripts may not work as expected.
+Attached 5 probes
+Tracing RAND_bytes for PID 684704 for 400 seconds...
+1  active=0  max_active=1
+2  active=0  max_active=2
+3  active=0  max_active=2
+4  active=0  max_active=2
+5  active=0  max_active=2
+6  active=0  max_active=2
+7  active=0  max_active=2
+8  active=0  max_active=2
+9  active=0  max_active=2
+10  active=0  max_active=2
+11  active=0  max_active=2
+12  active=0  max_active=2
+13  active=0  max_active=2
+14  active=0  max_active=2
+15  active=0  max_active=2
+16  active=0  max_active=2
+17  active=0  max_active=2
+18  active=0  max_active=2
+19  active=0  max_active=2
+20  active=0  max_active=2
+21  active=0  max_active=2
+22  active=0  max_active=2
+23  active=0  max_active=2
+24  active=0  max_active=2
+25  active=0  max_active=2
+26  active=0  max_active=2
+27  active=0  max_active=2
+28  active=0  max_active=2
+29  active=0  max_active=2
+30  active=0  max_active=2
+31  active=0  max_active=2
+32  active=0  max_active=2
+33  active=0  max_active=2
+34  active=0  max_active=2
+35  active=0  max_active=2
+36  active=0  max_active=2
+37  active=0  max_active=2
+38  active=0  max_active=2
+39  active=0  max_active=2
+40  active=0  max_active=2
+41  active=0  max_active=2
+42  active=0  max_active=2
+43  active=0  max_active=2
+44  active=0  max_active=2
+45  active=0  max_active=2
+46  active=0  max_active=2
+47  active=0  max_active=2
+48  active=0  max_active=2
+49  active=0  max_active=2
+50  active=0  max_active=2
+51  active=0  max_active=2
+52  active=0  max_active=2
+53  active=0  max_active=2
+54  active=0  max_active=2
+55  active=0  max_active=2
+56  active=0  max_active=2
+57  active=0  max_active=2
+58  active=0  max_active=3
+59  active=1  max_active=4
+60  active=1  max_active=4
+61  active=1  max_active=4
+62  active=1  max_active=4
+63  active=1  max_active=4
+64  active=1  max_active=4
+65  active=1  max_active=4
+66  active=1  max_active=4
+67  active=1  max_active=4
+68  active=1  max_active=4
+69  active=0  max_active=4
+70  active=0  max_active=4
+71  active=0  max_active=4
+72  active=0  max_active=4
+73  active=0  max_active=4
+74  active=0  max_active=4
+75  active=0  max_active=4
+76  active=0  max_active=4
+77  active=0  max_active=4
+78  active=0  max_active=4
+79  active=0  max_active=4
+80  active=0  max_active=4
+81  active=0  max_active=4
+82  active=0  max_active=4
+83  active=0  max_active=4
+84  active=0  max_active=4
+85  active=0  max_active=4
+86  active=0  max_active=4
+87  active=0  max_active=4
+88  active=0  max_active=4
+89  active=0  max_active=4
+90  active=0  max_active=4
+91  active=0  max_active=4
+92  active=0  max_active=4
+93  active=0  max_active=4
+94  active=1  max_active=4
+95  active=1  max_active=4
+96  active=1  max_active=4
+97  active=1  max_active=4
+98  active=1  max_active=4
+99  active=1  max_active=4
+100  active=1  max_active=4
+101  active=1  max_active=4
+102  active=1  max_active=4
+103  active=1  max_active=4
+104  active=1  max_active=4
+105  active=1  max_active=4
+106  active=1  max_active=4
+107  active=1  max_active=4
+108  active=1  max_active=4
+109  active=1  max_active=4
+110  active=1  max_active=4
+111  active=1  max_active=4
+112  active=1  max_active=4
+113  active=1  max_active=4
+114  active=1  max_active=4
+115  active=1  max_active=4
+116  active=0  max_active=4
+117  active=2  max_active=5
+118  active=4  max_active=7
+119  active=3  max_active=10
+120  active=3  max_active=11
+121  active=6  max_active=11
+122  active=15  max_active=21
+123  active=2  max_active=21
+124  active=0  max_active=21
+125  active=1  max_active=21
+126  active=2  max_active=21
+127  active=2  max_active=21
+128  active=4  max_active=21
+129  active=6  max_active=21
+130  active=6  max_active=21
+131  active=6  max_active=21
+132  active=5  max_active=21
+133  active=3  max_active=21
+134  active=3  max_active=21
+135  active=11  max_active=21
+136  active=11  max_active=21
+137  active=14  max_active=21
+138  active=14  max_active=21
+139  active=11  max_active=21
+140  active=10  max_active=21
+141  active=14  max_active=21
+142  active=14  max_active=21
+143  active=14  max_active=21
+144  active=14  max_active=21
+145  active=14  max_active=21
+146  active=10  max_active=21
+147  active=10  max_active=21
+148  active=10  max_active=21
+149  active=10  max_active=21
+150  active=10  max_active=21
+151  active=10  max_active=21
+152  active=10  max_active=21
+153  active=10  max_active=21
+154  active=10  max_active=21
+155  active=10  max_active=21
+156  active=10  max_active=21
+157  active=9  max_active=21
+158  active=10  max_active=21
+159  active=10  max_active=21
+160  active=16  max_active=21
+161  active=16  max_active=21
+162  active=16  max_active=21
+163  active=18  max_active=22
+164  active=18  max_active=22
+165  active=18  max_active=22
+166  active=18  max_active=22
+167  active=18  max_active=22
+168  active=18  max_active=22
+169  active=17  max_active=22
+170  active=17  max_active=22
+171  active=17  max_active=22
+172  active=17  max_active=22
+173  active=17  max_active=22
+174  active=17  max_active=22
+175  active=18  max_active=22
+176  active=19  max_active=22
+177  active=19  max_active=22
+178  active=22  max_active=24
+179  active=24  max_active=26
+180  active=23  max_active=26
+181  active=23  max_active=26
+182  active=23  max_active=26
+183  active=23  max_active=26
+184  active=23  max_active=26
+185  active=23  max_active=26
+186  active=23  max_active=26
+187  active=23  max_active=26
+188  active=23  max_active=26
+189  active=23  max_active=26
+190  active=23  max_active=26
+191  active=27  max_active=34
+192  active=15  max_active=34
+193  active=16  max_active=34
+194  active=16  max_active=34
+195  active=16  max_active=34
+196  active=16  max_active=34
+197  active=16  max_active=34
+198  active=16  max_active=34
+199  active=16  max_active=34
+200  active=16  max_active=34
+201  active=16  max_active=34
+202  active=16  max_active=34
+203  active=16  max_active=34
+204  active=16  max_active=34
+205  active=16  max_active=34
+206  active=16  max_active=34
+207  active=16  max_active=34
+208  active=16  max_active=34
+209  active=16  max_active=34
+210  active=16  max_active=34
+211  active=15  max_active=34
+212  active=15  max_active=34
+213  active=15  max_active=34
+214  active=15  max_active=34
+215  active=15  max_active=34
+216  active=15  max_active=34
+217  active=15  max_active=34
+218  active=11  max_active=34
+219  active=12  max_active=34
+220  active=7  max_active=34
+221  active=8  max_active=34
+222  active=8  max_active=34
+223  active=8  max_active=34
+224  active=8  max_active=34
+225  active=8  max_active=34
+226  active=9  max_active=34
+227  active=9  max_active=34
+228  active=9  max_active=34
+229  active=9  max_active=34
+230  active=9  max_active=34
+231  active=9  max_active=34
+232  active=9  max_active=34
+233  active=9  max_active=34
+234  active=10  max_active=34
+235  active=10  max_active=34
+236  active=9  max_active=34
+237  active=9  max_active=34
+238  active=9  max_active=34
+239  active=9  max_active=34
+240  active=8  max_active=34
+241  active=8  max_active=34
+242  active=8  max_active=34
+243  active=8  max_active=34
+244  active=9  max_active=34
+245  active=9  max_active=34
+246  active=9  max_active=34
+247  active=9  max_active=34
+248  active=9  max_active=34
+249  active=9  max_active=34
+250  active=9  max_active=34
+251  active=9  max_active=34
+252  active=9  max_active=34
+253  active=9  max_active=34
+254  active=8  max_active=34
+255  active=8  max_active=34
+256  active=8  max_active=34
+257  active=8  max_active=34
+258  active=8  max_active=34
+259  active=8  max_active=34
+260  active=8  max_active=34
+261  active=8  max_active=34
+262  active=8  max_active=34
+263  active=8  max_active=34
+264  active=8  max_active=34
+265  active=8  max_active=34
+266  active=7  max_active=34
+267  active=7  max_active=34
+268  active=7  max_active=34
+269  active=7  max_active=34
+270  active=7  max_active=34
+271  active=7  max_active=34
+272  active=7  max_active=34
+273  active=7  max_active=34
+274  active=7  max_active=34
+275  active=7  max_active=34
+276  active=7  max_active=34
+277  active=7  max_active=34
+278  active=7  max_active=34
+279  active=7  max_active=34
+280  active=7  max_active=34
+281  active=7  max_active=34
+282  active=7  max_active=34
+283  active=7  max_active=34
+284  active=7  max_active=34
+285  active=6  max_active=34
+286  active=6  max_active=34
+287  active=6  max_active=34
+288  active=6  max_active=34
+289  active=4  max_active=34
+290  active=4  max_active=34
+291  active=4  max_active=34
+292  active=4  max_active=34
+293  active=4  max_active=34
+294  active=4  max_active=34
+295  active=4  max_active=34
+296  active=4  max_active=34
+297  active=4  max_active=34
+298  active=4  max_active=34
+299  active=4  max_active=34
+300  active=4  max_active=34
+301  active=4  max_active=34
+302  active=4  max_active=34
+303  active=4  max_active=34
+304  active=4  max_active=34
+305  active=5  max_active=34
+306  active=4  max_active=34
+307  active=4  max_active=34
+308  active=4  max_active=34
+309  active=4  max_active=34
+310  active=5  max_active=34
+311  active=5  max_active=34
+312  active=5  max_active=34
+313  active=5  max_active=34
+314  active=6  max_active=34
+315  active=6  max_active=34
+316  active=6  max_active=34
+317  active=6  max_active=34
+318  active=6  max_active=34
+319  active=6  max_active=34
+320  active=6  max_active=34
+321  active=6  max_active=34
+322  active=6  max_active=34
+323  active=6  max_active=34
+324  active=6  max_active=34
+325  active=6  max_active=34
+326  active=6  max_active=34
+327  active=6  max_active=34
+328  active=6  max_active=34
+329  active=6  max_active=34
+330  active=6  max_active=34
+331  active=6  max_active=34
+332  active=6  max_active=34
+333  active=6  max_active=34
+334  active=6  max_active=34
+335  active=6  max_active=34
+336  active=6  max_active=34
+337  active=6  max_active=34
+338  active=6  max_active=34
+339  active=6  max_active=34
+340  active=6  max_active=34
+341  active=6  max_active=34
+342  active=6  max_active=34
+343  active=6  max_active=34
+344  active=6  max_active=34
+345  active=6  max_active=34
+346  active=6  max_active=34
+347  active=6  max_active=34
+348  active=6  max_active=34
+349  active=6  max_active=34
+350  active=6  max_active=34
+351  active=6  max_active=34
+352  active=6  max_active=34
+353  active=6  max_active=34
+354  active=6  max_active=34
+355  active=6  max_active=34
+356  active=6  max_active=34
+357  active=6  max_active=34
+358  active=6  max_active=34
+359  active=7  max_active=34
+360  active=7  max_active=34
+361  active=2  max_active=34
+362  active=2  max_active=34
+363  active=2  max_active=34
+364  active=4  max_active=34
+365  active=7  max_active=34
+366  active=12  max_active=34
+367  active=12  max_active=34
+368  active=12  max_active=34
+369  active=8  max_active=34
+370  active=9  max_active=34
+371  active=8  max_active=34
+372  active=3  max_active=34
+373  active=1  max_active=34
+374  active=0  max_active=34
+375  active=0  max_active=34
+376  active=0  max_active=34
+377  active=0  max_active=34
+378  active=0  max_active=34
+379  active=2  max_active=34
+380  active=6  max_active=34
+381  active=6  max_active=34
+382  active=6  max_active=34
+383  active=7  max_active=34
+384  active=7  max_active=34
+385  active=7  max_active=34
+386  active=4  max_active=34
+387  active=5  max_active=34
+388  active=1  max_active=34
+389  active=1  max_active=34
+390  active=15  max_active=34
+391  active=15  max_active=34
+392  active=15  max_active=34
+393  active=15  max_active=34
+394  active=15  max_active=34
+395  active=15  max_active=34
+396  active=15  max_active=34
+397  active=15  max_active=34
+398  active=16  max_active=34
+399  active=18  max_active=34
+400  active=18  max_active=34
+
+=== Final max concurrent RAND_bytes calls: 34 ===
+
+=== RAND_bytes call duration histogram (ns) ===
+@duration_ns:
+[4K, 8K)            5492 |@@@                                                 |
+[8K, 16K)          80389 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16K, 32K)         12889 |@@@@@@@@                                            |
+[32K, 64K)          1045 |                                                    |
+[64K, 128K)           39 |                                                    |
+[128K, 256K)          11 |                                                    |
+[256K, 512K)           8 |                                                    |
+[512K, 1M)             3 |                                                    |
+[1M, 2M)               1 |                                                    |
+[2M, 4M)               3 |                                                    |
+[4M, 8M)               0 |                                                    |
+[8M, 16M)              1 |                                                    |
+
+
+
+18:28:48 capture done (pid=684704)
+18:35:58 === new kube-apiserver pid=693905 ===
+18:35:58 capturing for 400s (pid=693905)...
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:37:51-79: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:38:10-38: WARNING: signed operands for '/' can lead to undefined behavior (cast to unsigned to silence warning)
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:30:29-34: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                            ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:30:37-48: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+        @duration_ns = hist(nsecs - @entry[tid]);
+                                    ~~~~~~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:37:51-56: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                  ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:37:59-65: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    printf("%d  active=%lld  max_active=%lld\n", (nsecs - @start) / 1000000000, @active, @max_active);
+                                                          ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:38:10-15: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+         ~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:38:18-24: WARNING: Expression of type: uint64 being cast to type: int64. This may cause unexpected results. Use an explicit cast to suppress this warning.
+    if ((nsecs - @start) / 1000000000 >= 400) {
+                 ~~~~~~
+/tmp/rand_bytes_concurrency_v3solutionloop_693905.bt:31:9-28: WARNING: Return value discarded.
+        delete(@entry[tid]);
+        ~~~~~~~~~~~~~~~~~~~
+WARNING: Kernel version (5.14.0-730.el9.x86_64) is lower than the minimum supported kernel version (5.15.0). Some features/scripts may not work as expected.
+Attached 5 probes
+Tracing RAND_bytes for PID 693905 for 400 seconds...
+1  active=0  max_active=2
+2  active=0  max_active=2
+3  active=0  max_active=2
+4  active=0  max_active=2
+5  active=0  max_active=2
+6  active=0  max_active=2
+7  active=0  max_active=2
+8  active=0  max_active=2
+9  active=0  max_active=2
+10  active=0  max_active=2
+11  active=0  max_active=2
+12  active=0  max_active=2
+13  active=0  max_active=2
+14  active=0  max_active=2
+15  active=0  max_active=2
+16  active=0  max_active=2
+17  active=0  max_active=2
+18  active=0  max_active=2
+19  active=0  max_active=2
+20  active=0  max_active=2
+21  active=0  max_active=2
+22  active=0  max_active=2
+23  active=0  max_active=2
+24  active=0  max_active=2
+25  active=0  max_active=2
+26  active=0  max_active=2
+27  active=0  max_active=2
+28  active=0  max_active=2
+29  active=0  max_active=2
+30  active=0  max_active=2
+31  active=0  max_active=2
+32  active=0  max_active=2
+33  active=0  max_active=2
+34  active=0  max_active=2
+35  active=0  max_active=2
+36  active=0  max_active=2
+37  active=0  max_active=2
+38  active=0  max_active=2
+39  active=0  max_active=2
+40  active=0  max_active=2
+41  active=0  max_active=2
+42  active=0  max_active=2
+43  active=0  max_active=2
+44  active=0  max_active=2
+45  active=0  max_active=2
+46  active=0  max_active=2
+47  active=0  max_active=2
+48  active=0  max_active=2
+49  active=0  max_active=2
+50  active=0  max_active=2
+51  active=0  max_active=2
+52  active=0  max_active=2
+53  active=0  max_active=2
+54  active=0  max_active=2
+55  active=0  max_active=2
+56  active=0  max_active=2
+57  active=0  max_active=2
+58  active=2  max_active=5
+59  active=3  max_active=7
+60  active=1  max_active=7
+61  active=0  max_active=7
+62  active=0  max_active=7
+63  active=0  max_active=7
+64  active=0  max_active=7
+65  active=0  max_active=7
+66  active=0  max_active=7
+67  active=0  max_active=7
+68  active=0  max_active=7
+69  active=0  max_active=7
+70  active=0  max_active=7
+71  active=0  max_active=7
+72  active=0  max_active=7
+73  active=0  max_active=7
+74  active=0  max_active=7
+75  active=0  max_active=7
+76  active=0  max_active=7
+77  active=0  max_active=7
+78  active=0  max_active=7
+79  active=0  max_active=7
+80  active=0  max_active=7
+81  active=0  max_active=7
+82  active=0  max_active=7
+83  active=0  max_active=7
+84  active=0  max_active=7
+85  active=1  max_active=7
+86  active=1  max_active=7
+87  active=1  max_active=7
+88  active=1  max_active=7
+89  active=1  max_active=7
+90  active=1  max_active=7
+91  active=1  max_active=7
+92  active=1  max_active=7
+93  active=1  max_active=7
+94  active=1  max_active=7
+95  active=1  max_active=7
+96  active=1  max_active=7
+97  active=1  max_active=7
+98  active=1  max_active=7
+99  active=1  max_active=7
+100  active=1  max_active=7
+101  active=1  max_active=7
+102  active=1  max_active=7
+103  active=1  max_active=7
+104  active=1  max_active=7
+105  active=1  max_active=7
+106  active=1  max_active=7
+107  active=1  max_active=7
+108  active=0  max_active=7
+109  active=0  max_active=7
+110  active=0  max_active=7
+111  active=0  max_active=7
+112  active=0  max_active=7
+113  active=0  max_active=7
+114  active=0  max_active=7
+115  active=0  max_active=7
+116  active=0  max_active=7
+117  active=0  max_active=7
+118  active=0  max_active=7
+119  active=0  max_active=7
+120  active=0  max_active=7
+121  active=0  max_active=7
+122  active=0  max_active=7
+123  active=0  max_active=7
+124  active=0  max_active=7
+125  active=1  max_active=7
+126  active=2  max_active=7
+127  active=3  max_active=7
+128  active=3  max_active=7
+129  active=3  max_active=7
+130  active=6  max_active=11
+131  active=19  max_active=24
+132  active=18  max_active=24
+133  active=19  max_active=24
+134  active=19  max_active=24
+135  active=26  max_active=29
+136  active=26  max_active=29
+137  active=24  max_active=31
+138  active=29  max_active=34
+139  active=29  max_active=34
+140  active=29  max_active=35
+141  active=28  max_active=36
+142  active=28  max_active=36
+143  active=27  max_active=36
+144  active=21  max_active=36
+145  active=21  max_active=36
+146  active=18  max_active=36
+147  active=18  max_active=36
+148  active=18  max_active=36
+149  active=19  max_active=36
+150  active=19  max_active=36
+151  active=21  max_active=36
+152  active=21  max_active=36
+153  active=21  max_active=36
+154  active=21  max_active=36
+155  active=21  max_active=36
+156  active=24  max_active=36
+157  active=24  max_active=36
+158  active=24  max_active=36
+159  active=24  max_active=36
+160  active=23  max_active=36
+161  active=23  max_active=36
+162  active=23  max_active=36
+163  active=25  max_active=36
+164  active=25  max_active=36
+165  active=25  max_active=36
+166  active=25  max_active=36
+167  active=24  max_active=36
+168  active=24  max_active=36
+169  active=24  max_active=36
+170  active=27  max_active=36
+171  active=27  max_active=36
+172  active=27  max_active=36
+173  active=27  max_active=36
+174  active=27  max_active=36
+175  active=28  max_active=36
+176  active=28  max_active=36
+177  active=28  max_active=36
+178  active=29  max_active=36
+179  active=29  max_active=36
+180  active=30  max_active=36
+181  active=30  max_active=36
+182  active=30  max_active=36
+183  active=30  max_active=36
+184  active=30  max_active=36
+185  active=30  max_active=36
+186  active=30  max_active=36
+187  active=30  max_active=36
+188  active=30  max_active=36
+189  active=35  max_active=38
+190  active=44  max_active=50
+191  active=44  max_active=50
+192  active=44  max_active=50
+193  active=44  max_active=50
+194  active=44  max_active=50
+195  active=44  max_active=50
+196  active=43  max_active=50
+197  active=43  max_active=50
+198  active=43  max_active=50
+199  active=43  max_active=50
+200  active=43  max_active=50
+201  active=43  max_active=50
+202  active=43  max_active=50
+203  active=43  max_active=50
+204  active=43  max_active=50
+205  active=43  max_active=50
+206  active=43  max_active=50
+207  active=43  max_active=50
+208  active=43  max_active=50
+209  active=43  max_active=50
+210  active=43  max_active=50
+211  active=35  max_active=50
+212  active=35  max_active=50
+213  active=35  max_active=50
+214  active=35  max_active=50
+215  active=35  max_active=50
+216  active=33  max_active=50
+217  active=33  max_active=50
+218  active=32  max_active=50
+219  active=27  max_active=50
+220  active=25  max_active=50
+221  active=23  max_active=50
+222  active=23  max_active=50
+223  active=23  max_active=50
+224  active=23  max_active=50
+225  active=23  max_active=50
+226  active=23  max_active=50
+227  active=23  max_active=50
+228  active=24  max_active=50
+229  active=23  max_active=50
+230  active=23  max_active=50
+231  active=23  max_active=50
+232  active=23  max_active=50
+233  active=23  max_active=50
+234  active=23  max_active=50
+235  active=23  max_active=50
+236  active=23  max_active=50
+237  active=23  max_active=50
+238  active=23  max_active=50
+239  active=23  max_active=50
+240  active=23  max_active=50
+241  active=23  max_active=50
+242  active=23  max_active=50
+243  active=23  max_active=50
+244  active=23  max_active=50
+245  active=23  max_active=50
+246  active=23  max_active=50
+247  active=24  max_active=50
+248  active=24  max_active=50
+249  active=24  max_active=50
+250  active=23  max_active=50
+251  active=23  max_active=50
+252  active=23  max_active=50
+253  active=22  max_active=50
+254  active=22  max_active=50
+255  active=22  max_active=50
+256  active=22  max_active=50
+257  active=22  max_active=50
+258  active=22  max_active=50
+259  active=22  max_active=50
+260  active=22  max_active=50
+261  active=22  max_active=50
+262  active=22  max_active=50
+263  active=22  max_active=50
+264  active=22  max_active=50
+265  active=22  max_active=50
+266  active=22  max_active=50
+267  active=22  max_active=50
+268  active=22  max_active=50
+269  active=22  max_active=50
+270  active=22  max_active=50
+271  active=21  max_active=50
+272  active=21  max_active=50
+273  active=21  max_active=50
+274  active=21  max_active=50
+275  active=21  max_active=50
+276  active=21  max_active=50
+277  active=21  max_active=50
+278  active=20  max_active=50
+279  active=20  max_active=50
+280  active=20  max_active=50
+281  active=21  max_active=50
+282  active=21  max_active=50
+283  active=20  max_active=50
+284  active=20  max_active=50
+285  active=20  max_active=50
+286  active=20  max_active=50
+287  active=20  max_active=50
+288  active=20  max_active=50
+289  active=20  max_active=50
+290  active=20  max_active=50
+291  active=20  max_active=50
+292  active=20  max_active=50
+293  active=20  max_active=50
+294  active=20  max_active=50
+295  active=20  max_active=50
+296  active=21  max_active=50
+297  active=21  max_active=50
+298  active=21  max_active=50
+299  active=21  max_active=50
+300  active=22  max_active=50
+301  active=22  max_active=50
+302  active=21  max_active=50
+303  active=21  max_active=50
+304  active=21  max_active=50
+305  active=21  max_active=50
+306  active=20  max_active=50
+307  active=20  max_active=50
+308  active=20  max_active=50
+309  active=20  max_active=50
+310  active=20  max_active=50
+311  active=20  max_active=50
+312  active=20  max_active=50
+313  active=20  max_active=50
+314  active=20  max_active=50
+315  active=20  max_active=50
+316  active=20  max_active=50
+317  active=20  max_active=50
+318  active=20  max_active=50
+319  active=20  max_active=50
+320  active=20  max_active=50
+321  active=20  max_active=50
+322  active=20  max_active=50
+323  active=20  max_active=50
+324  active=20  max_active=50
+325  active=20  max_active=50
+326  active=20  max_active=50
+327  active=20  max_active=50
+328  active=20  max_active=50
+329  active=20  max_active=50
+330  active=20  max_active=50
+331  active=20  max_active=50
+332  active=20  max_active=50
+333  active=21  max_active=50
+334  active=21  max_active=50
+335  active=22  max_active=50
+336  active=22  max_active=50
+337  active=22  max_active=50
+338  active=22  max_active=50
+339  active=22  max_active=50
+340  active=22  max_active=50
+341  active=22  max_active=50
+342  active=22  max_active=50
+343  active=22  max_active=50
+344  active=22  max_active=50
+345  active=22  max_active=50
+346  active=22  max_active=50
+347  active=22  max_active=50
+348  active=23  max_active=50
+349  active=23  max_active=50
+350  active=23  max_active=50
+351  active=23  max_active=50
+352  active=23  max_active=50
+353  active=23  max_active=50
+354  active=23  max_active=50
+355  active=23  max_active=50
+356  active=23  max_active=50
+357  active=23  max_active=50
+358  active=23  max_active=50
+359  active=23  max_active=50
+360  active=23  max_active=50
+361  active=24  max_active=50
+362  active=24  max_active=50
+363  active=24  max_active=50
+364  active=31  max_active=50
+365  active=31  max_active=50
+366  active=31  max_active=50
+367  active=31  max_active=50
+368  active=30  max_active=50
+369  active=29  max_active=50
+370  active=28  max_active=50
+371  active=29  max_active=50
+372  active=48  max_active=60
+373  active=44  max_active=60
+374  active=44  max_active=60
+375  active=44  max_active=60
+376  active=36  max_active=60
+377  active=38  max_active=60
+378  active=24  max_active=60
+379  active=22  max_active=60
+380  active=18  max_active=60
+381  active=15  max_active=60
+382  active=14  max_active=60
+383  active=11  max_active=60
+384  active=11  max_active=60
+385  active=18  max_active=60
+386  active=11  max_active=60
+387  active=11  max_active=60
+388  active=12  max_active=60
+389  active=12  max_active=60
+390  active=12  max_active=60
+391  active=10  max_active=60
+392  active=17  max_active=60
+393  active=18  max_active=60
+394  active=17  max_active=60
+395  active=20  max_active=60
+396  active=16  max_active=60
+397  active=12  max_active=60
+398  active=18  max_active=60
+399  active=18  max_active=60
+400  active=18  max_active=60
+
+=== Final max concurrent RAND_bytes calls: 60 ===
+
+=== RAND_bytes call duration histogram (ns) ===
+@duration_ns:
+[4K, 8K)            8083 |@@@@                                                |
+[8K, 16K)         102109 |@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|
+[16K, 32K)         12879 |@@@@@@                                              |
+[32K, 64K)          1202 |                                                    |
+[64K, 128K)           37 |                                                    |
+[128K, 256K)          11 |                                                    |
+[256K, 512K)           2 |                                                    |
+[512K, 1M)             1 |                                                    |
+[1M, 2M)               3 |                                                    |
+[2M, 4M)               1 |                                                    |
+[4M, 8M)               1 |                                                    |
+
+
+
+18:42:40 capture done (pid=693905)
+18:42:40 looper exiting (deadline reached)

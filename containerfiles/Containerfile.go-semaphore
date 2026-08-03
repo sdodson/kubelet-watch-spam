@@ -1,0 +1,63 @@
+# Minimal-diff adaptation of the official build, from:
+# https://github.com/openshift/kubernetes/blob/2df3632e823a813f64218dfc6f5c2e70d28ecdf0/openshift-hack/images/hyperkube/Dockerfile.rhel
+#
+# The only intentional changes from the official Dockerfile:
+#   1. The patched test-only Go toolchain RPMs are installed into the builder
+#      stage before the build runs (everything else in that stage — the
+#      `make WHAT=...` invocation, its flags/GOEXPERIMENT/ldflags — is
+#      untouched, so it picks up FIPS build settings exactly as the official
+#      pipeline does).
+#   2. The source is fetched via a shallow git checkout of the exact commit
+#      instead of `COPY . .`, since this build has no local checkout to use
+#      as build context.
+#   3. The final stage only swaps the `kube-apiserver` binary into the live
+#      cluster's exact release digest, instead of rebuilding the full
+#      hyperkube multi-binary image — we only need kube-apiserver for this
+#      test, and layering onto the release digest keeps every other
+#      container (cert-syncer, etc.) byte-identical to the live cluster.
+
+FROM registry.ci.openshift.org/ocp/builder:rhel-9-golang-1.24-openshift-4.20 AS builder
+COPY golang-1.24.13-10.testonly.el9_8.x86_64.rpm golang-bin-1.24.13-10.testonly.el9_8.x86_64.rpm /tmp/
+RUN rpm -Uvh --force --nodeps \
+      /tmp/golang-1.24.13-10.testonly.el9_8.x86_64.rpm \
+      /tmp/golang-bin-1.24.13-10.testonly.el9_8.x86_64.rpm && \
+    rm -f /tmp/golang-*.rpm && \
+    go version
+
+ENV GOTOOLCHAIN=local
+ENV GOEXPERIMENT=strictfipsruntime
+
+WORKDIR /go/src/k8s.io/kubernetes
+RUN git init . && \
+    git remote add origin https://github.com/openshift/kubernetes.git && \
+    git fetch --depth=1 origin 2df3632e823a813f64218dfc6f5c2e70d28ecdf0 && \
+    git checkout FETCH_HEAD && \
+    git config user.email "build@build" && \
+    git config user.name "build"
+
+RUN make WHAT='cmd/kube-apiserver cmd/kube-controller-manager cmd/kube-scheduler cmd/kubelet cmd/watch-termination openshift-hack/cmd/k8s-tests-ext' && \
+    mkdir -p /tmp/build && \
+    cp openshift-hack/images/hyperkube/hyperkube openshift-hack/images/hyperkube/kubensenter /tmp/build && \
+    cp /go/src/k8s.io/kubernetes/_output/local/bin/linux/$(go env GOARCH)/kube-apiserver /tmp/build/kube-apiserver
+
+# Debug-only artifact: same source, same toolchain, same GOEXPERIMENT, but a plain
+# `go build` with no strip flags, so `go tool nm`/DWARF-based symbol inspection can
+# see the full symbol table (the `make WHAT=...` output above is release-stripped).
+RUN go build -o /tmp/build/kube-apiserver-unstripped ./cmd/kube-apiserver
+
+# Debug target (`podman build --target unstripped ...`): identical base image, but
+# with the unstripped binary (full symbol table + DWARF debug info) instead, for
+# `go tool nm`/objdump-based symbol inspection — e.g. confirming presence/absence of
+# the golang-fips/openssl `drbgSemEnabled`/`drbgSemInstance` symbols. Not intended
+# for cluster deployment, just local analysis. Defined before `final` so that a
+# plain `podman build` with no --target (last stage wins) still produces the
+# deployable stripped image, not this one.
+FROM quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ce9842798b75bec812500f61ca0952dc735adeac6c2f3499eb92dcb1e028a636 AS unstripped
+
+COPY --from=builder /tmp/build/kube-apiserver-unstripped /usr/bin/kube-apiserver
+
+# Default target (last stage — what a plain `podman build` without --target produces):
+# the normal, release-stripped binary used for actual cluster deployment.
+FROM quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:ce9842798b75bec812500f61ca0952dc735adeac6c2f3499eb92dcb1e028a636 AS final
+
+COPY --from=builder /tmp/build/kube-apiserver /usr/bin/kube-apiserver

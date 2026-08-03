@@ -14,3 +14,4 @@ rpms/
 # Common local junk
 *.log
 .DS_Store
+results/threaddumps/goroutine_full_*.txt

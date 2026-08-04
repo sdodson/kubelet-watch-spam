@@ -1,12 +1,14 @@
-# go-semaphore-v3 (real semaphore) + STOCK kernel — 20 rounds
+# go-semaphore-v3 (real semaphore) + STOCK kernel — 40 rounds (2 batches)
 
-**Date:** 2026-08-03
+**Date:** 2026-08-03 (batch 1), 2026-08-04 (batch 2)
 **Cluster:** fips-mode-5c8hc
 
 This isolates the go-semaphore-v3 build's effect from the per-CPU-DRBG test kernel, by reverting
 all 3 masters to the stock kernel (`5.14.0-570.126.1.el9_6`) while keeping `go-semaphore-v3`
 deployed, then running 20 rounds under the same conditions as
-`2026-08-03-go-semaphore-v3-drbg-kernel-20rounds.md`.
+`2026-08-03-go-semaphore-v3-drbg-kernel-20rounds.md`. A second 20-round batch was added on
+2026-08-04 (same config, unchanged) to bring the sample size up to n=38, matching the stock
+baseline's sample size.
 
 ## Environment
 
@@ -47,34 +49,63 @@ deployed, then running 20 rounds under the same conditions as
 
 Full timestamped detail: `2026-08-03-go-semaphore-v3-stock-kernel-rounds-raw.log`.
 
-## Summary statistics (rounds 2-20, n=19)
+### Batch 2 (2026-08-04, same config)
 
-| Stat | Value |
-|---|---:|
-| mean | 194.3 |
-| median | 114.0 |
-| p75 | 200.0 |
-| p90 | 459.2 |
-| stddev | 223.6 |
-| min | 22 |
-| max | 958 |
+| Round | Peak threads |
+|-------|-------------:|
+| 1 (discard) | 171 |
+| 2  | 176 |
+| 3  | 81 |
+| 4  | 52 |
+| 5  | 66 |
+| 6  | 348 |
+| 7  | 343 |
+| 8  | 94 |
+| 9  | 72 |
+| 10 | 161 |
+| 11 | 543 |
+| 12 | 74 |
+| 13 | 186 |
+| 14 | 63 |
+| 15 | 190 |
+| 16 | 155 |
+| 17 | 35 |
+| 18 | 134 |
+| 19 | 220 |
+| 20 | 351 |
 
-## Three-way comparison
+Full timestamped detail: `2026-08-04-go-semaphore-v3-stock-kernel-batch2-rounds-raw.log`.
 
-| Stat | Stock baseline (n=38) | go-semaphore-v3 + stock kernel (n=19) | go-semaphore-v3 + DRBG kernel (n=19) |
+## Summary statistics
+
+| Stat | Batch 1 (n=19) | Batch 2 (n=19) | Combined (n=38) |
 |---|---:|---:|---:|
-| mean | 635.6 | **194.3** | 215.0 |
-| median | 535.0 | **114.0** | 154.0 |
-| p75 | 906.5 | 200.0 | 299.0 |
-| p90 | 1174.2 | 459.2 | 509.6 |
+| mean | 194.3 | 176.0 | 185.1 |
+| median | 114.0 | 155.0 | 130.5 |
+| stdev | 223.6 | 134.3 | 182.1 |
+| p90 | 459.2 | 348.6 | 382.8 |
+| min | 22 | 35 | 22 |
+| max | 958 | 543 | 958 |
 
-**Welch's t-test, stock baseline vs. go-semaphore-v3 + stock kernel: t = 4.423, df ≈ 54 — highly
-significant** (p < 0.0001). Mean reduction **69.4%**, median reduction **78.7%** — both slightly
-*larger* than the go-semaphore-v3 + DRBG-kernel result (66.2% / 71.2%).
+## Three-way comparison (combined n=38 vs. n=38)
 
-**Welch's t-test, go-semaphore-v3 + stock kernel vs. go-semaphore-v3 + DRBG kernel: t = -0.324 —
-not remotely significant.** The two kernel conditions are statistically indistinguishable from
-each other with the go-semaphore-v3 build in place.
+| Stat | Stock baseline (n=38) | go-semaphore-v3 + stock kernel (n=38) | go-semaphore-v3 + DRBG kernel (n=19) |
+|---|---:|---:|---:|
+| mean | 635.6 | **185.1** | 215.0 |
+| median | 535.0 | **130.5** | 154.0 |
+| p90 | 1174.2 | 382.8 | 509.6 |
+| max | 2795 | 958 | 578 |
+| stdev | 527.7 | 182.1 | 166.3 |
+
+**Welch's t-test, stock baseline (n=38) vs. go-semaphore-v3 + stock kernel (n=38): t = 4.974,
+df ≈ 45.7 — highly significant** (p < 0.0001), and *stronger* than the batch-1-only comparison
+(t=4.423) — doubling the sample size reinforced the effect rather than revealing it as noise,
+the opposite of what happened with every earlier (build-flawed) go-semaphore comparison in this
+investigation. Mean reduction **70.9%**, median reduction **75.6%**.
+
+**Welch's t-test, go-semaphore-v3 + stock kernel (batch 1, n=19) vs. go-semaphore-v3 + DRBG kernel
+(n=19): t = -0.324 — not remotely significant.** The two kernel conditions remain statistically
+indistinguishable from each other with the go-semaphore-v3 build in place.
 
 ## Conclusion: the DRBG kernel contributes nothing measurable
 

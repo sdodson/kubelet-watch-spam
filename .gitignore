@@ -15,4 +15,4 @@ rpms/
 *.log
 .DS_Store
 results/threaddumps/goroutine_full_*.txt
-results/randbytes-probe-v3/goroutine_watch.txt
+results/randbytes-probe/goroutine_watch.txt

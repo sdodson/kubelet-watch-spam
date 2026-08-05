@@ -1,19 +1,19 @@
-# go-semaphore-v3 (real semaphore) + per-CPU-DRBG kernel — 40 rounds (2 batches)
+# go-semaphore (real semaphore) + per-CPU-DRBG kernel — 40 rounds (2 batches)
 
 **Date:** 2026-08-03 (batch 1), 2026-08-04 (batch 2)
 **Cluster:** fips-mode-5c8hc
 
 A second 20-round batch was added on 2026-08-04 (kernel re-applied fresh via
-`rpm-ostree override replace` + reboot on all 3 masters, same `go-semaphore-v3` image, same
+`rpm-ostree override replace` + reboot on all 3 masters, same `go-semaphore` image, same
 workload/churn config already active from the stock-kernel testing) to bring this configuration to
-n=38, matching the stock baseline and the go-semaphore-v3 + stock-kernel dataset.
+n=38, matching the stock baseline and the go-semaphore + stock-kernel dataset.
 
 **This is the first test of the actual, functioning semaphore patch.** All prior go-semaphore
 results in this investigation (v1, v2 — both removed from this repo) were built without the
 `golang-src` RPM matching the patched toolchain, so `go build` silently compiled against the
 *stock* standard library source. The semaphore code
 (`vendor/github.com/golang-fips/openssl/v2/sem.go`) was never part of those binaries — confirmed
-absent via `go tool nm` on an unstripped build. This test uses `go-semaphore-v3`, built with
+absent via `go tool nm` on an unstripped build. This test uses `go-semaphore`, built with
 `golang`, `golang-bin`, **and `golang-src`** all at `1.24.13-10.testonly.el9_8`, confirmed via
 `go tool nm` to contain `drbgSemEnabled`/`drbgSemInstance`/`(*drbgSem).Acquire`/`.Release`.
 
@@ -29,7 +29,7 @@ Exactly two files differ from stock, extracted and diffed directly from the RPM 
 
 - **Control plane:** 3x m6i.4xlarge (16 vCPU / 64 GiB), consistent with all prior datasets.
 - **Kernel:** `5.14.0-730.el9.x86_64` (per-CPU-DRBG test kernel), all 3 masters.
-- **kube-apiserver image:** `quay.io/sdodsonrht/getrandperf:go-semaphore-v3`
+- **kube-apiserver image:** `quay.io/sdodsonrht/getrandperf:go-semaphore`
   - Built via `containerfiles/Containerfile.go-semaphore` — official `make WHAT=...` process,
     `GOEXPERIMENT=strictfipsruntime` set explicitly, all three `golang*` RPMs at the matching
     `-10.testonly.el9_8` NVR.
@@ -40,12 +40,12 @@ Exactly two files differ from stock, extracted and diffed directly from the RPM 
   (`churn_namespace.sh`, default settings — recreates `mount-spam-9` every 300s) enabled partway
   through this run (starting during round 12's cooldown). Rounds 1-11 ran without churn; rounds
   12-20 ran with it. See caveats below.
-- **Harness:** `run_rounds.sh -r 20 -l go-semaphore-v3-drbg-kernel`, standard settings.
+- **Harness:** `run_rounds.sh -r 20 -l go-semaphore-drbg-kernel`, standard settings.
 - **Concurrent instrumentation:** a periodic `/debug/pprof/threadcreate` capture (every 15s) plus a
   triggered `/debug/pprof/goroutine` + `/debug/pprof/threadcreate` capture whenever any node's
   `go_threads` exceeded a threshold (200 initially, lowered to 120 partway through) via
   `oc get --raw`, both LB-routed (not targeted to a specific node). Raw output:
-  `randbytes-probe-v3/threadcreate_watch.txt`, `randbytes-probe-v3/goroutine_watch.txt`.
+  `randbytes-probe/threadcreate_watch.txt`, `randbytes-probe/goroutine_watch.txt`.
 
 ## Raw per-round peak Go-thread counts
 
@@ -72,7 +72,7 @@ Exactly two files differ from stock, extracted and diffed directly from the RPM 
 | 19 | 520 | churn active |
 | 20 | 154 | churn active |
 
-Full timestamped detail: `2026-08-03-go-semaphore-v3-drbg-kernel-rounds-raw.log`.
+Full timestamped detail: `2026-08-03-go-semaphore-drbg-kernel-rounds-raw.log`.
 
 ### Batch 2 (2026-08-04, same config, kernel re-applied fresh)
 
@@ -99,7 +99,7 @@ Full timestamped detail: `2026-08-03-go-semaphore-v3-drbg-kernel-rounds-raw.log`
 | 19 | 204 |
 | 20 | 373 |
 
-Full timestamped detail: `2026-08-04-go-semaphore-v3-drbg-kernel-batch2-rounds-raw.log`.
+Full timestamped detail: `2026-08-04-go-semaphore-drbg-kernel-batch2-rounds-raw.log`.
 
 ## Summary statistics
 
@@ -114,7 +114,7 @@ Full timestamped detail: `2026-08-04-go-semaphore-v3-drbg-kernel-batch2-rounds-r
 
 ## Comparison vs. combined stock baseline (n=38)
 
-| Stat | Stock baseline (n=38) | go-semaphore-v3 + DRBG (n=38) | Reduction |
+| Stat | Stock baseline (n=38) | go-semaphore + DRBG (n=38) | Reduction |
 |---|---:|---:|---:|
 | mean | 635.6 | 183.9 | **71.1%** |
 | median | 535.0 | 138.0 | **74.2%** |
@@ -129,16 +129,16 @@ images. The earlier power analysis established that ~20-40 rounds/arm could only
 50-70%+ effect at this noise level — this result clears that bar decisively, and doubling the
 sample size reinforced rather than weakened it.
 
-### vs. go-semaphore-v3 + stock kernel (n=38 each)
+### vs. go-semaphore + stock kernel (n=38 each)
 
-| Stat | go-semaphore-v3 + stock kernel | go-semaphore-v3 + DRBG kernel |
+| Stat | go-semaphore + stock kernel | go-semaphore + DRBG kernel |
 |---|---:|---:|
 | mean | 185.1 | 183.9 |
 | median | 130.5 | 138.0 |
 
 **Welch's t-test: t = 0.031 — essentially zero difference.** With both configurations at n=38, the
 DRBG kernel and stock kernel are statistically indistinguishable from each other when
-go-semaphore-v3 is deployed. This confirms (with much stronger power than the earlier n=19-vs-n=19
+go-semaphore is deployed. This confirms (with much stronger power than the earlier n=19-vs-n=19
 comparison, which already showed t=-0.324) that **the per-CPU-DRBG kernel contributes nothing
 measurable** — the go-semaphore build alone fully accounts for the effect.
 
@@ -164,7 +164,7 @@ completely unbounded values seen with the broken (no-semaphore) builds under sim
 One raw "Final max concurrent" printf value of 521 was discarded as a bpftrace END-block
 read/aggregation artifact — it directly contradicted the immediately-preceding live interval
 sample (22) with no elapsed time for a real burst to occur. The corrected live-sample max for that
-capture (22) is used above. See `randbytes-probe-v3/v3_ip-10-0-54-184.log` for the raw evidence.
+capture (22) is used above. See `randbytes-probe/ip-10-0-54-184.log` for the raw evidence.
 
 ## Thread/goroutine dump findings (unchanged from the stock-build analysis)
 
@@ -213,7 +213,7 @@ goroutine population is unchanged?).
 ## Bottom line
 
 With all three configurations now at n=38, this investigation has landed on a clear, statistically
-robust conclusion: **the go-semaphore-v3 build produces a large (~70-76%), highly significant
+robust conclusion: **the go-semaphore build produces a large (~70-76%), highly significant
 reduction in peak kube-apiserver OS thread counts versus stock, and the per-CPU-DRBG kernel adds
 no additional measurable benefit on top of it** (t=0.031 between the two kernel variants — as
 close to "no difference" as this kind of comparison gets). The open question that remains is

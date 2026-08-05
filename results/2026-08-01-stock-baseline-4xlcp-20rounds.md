@@ -12,7 +12,7 @@ removed — the go-semaphore images tested through 2026-08-03 were missing the `
 matching the patched toolchain, so they were built against the *stock* standard library source and
 never actually contained the semaphore patch (`vendor/github.com/golang-fips/openssl/v2/sem.go`).
 Every prior comparison was measuring an inert binary, not the real mechanism. A corrected build
-(`go-semaphore-v3`, confirmed via `go tool nm` to contain `drbgSemEnabled`/`drbgSemInstance`) is
+(`go-semaphore`, confirmed via `go tool nm` to contain `drbgSemEnabled`/`drbgSemInstance`) is
 being tested fresh — see later dated result files for that data. This stock baseline dataset
 itself is unaffected and remains valid for comparison against the corrected build.
 

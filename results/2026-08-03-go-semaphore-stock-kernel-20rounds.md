@@ -1,12 +1,12 @@
-# go-semaphore-v3 (real semaphore) + STOCK kernel — 40 rounds (2 batches)
+# go-semaphore (real semaphore) + STOCK kernel — 40 rounds (2 batches)
 
 **Date:** 2026-08-03 (batch 1), 2026-08-04 (batch 2)
 **Cluster:** fips-mode-5c8hc
 
-This isolates the go-semaphore-v3 build's effect from the per-CPU-DRBG test kernel, by reverting
-all 3 masters to the stock kernel (`5.14.0-570.126.1.el9_6`) while keeping `go-semaphore-v3`
+This isolates the go-semaphore build's effect from the per-CPU-DRBG test kernel, by reverting
+all 3 masters to the stock kernel (`5.14.0-570.126.1.el9_6`) while keeping `go-semaphore`
 deployed, then running 20 rounds under the same conditions as
-`2026-08-03-go-semaphore-v3-drbg-kernel-20rounds.md`. A second 20-round batch was added on
+`2026-08-03-go-semaphore-drbg-kernel-20rounds.md`. A second 20-round batch was added on
 2026-08-04 (same config, unchanged) to bring the sample size up to n=38, matching the stock
 baseline's sample size.
 
@@ -15,12 +15,12 @@ baseline's sample size.
 - **Control plane:** 3x m6i.4xlarge (16 vCPU / 64 GiB), consistent with all prior datasets.
 - **Kernel:** `5.14.0-570.126.1.el9_6.x86_64` (stock), all 3 masters — reverted via
   `rpm-ostree override reset --all` + reboot, one master at a time with etcd-health checks.
-- **kube-apiserver image:** `quay.io/sdodsonrht/getrandperf:go-semaphore-v3` (unchanged from the
+- **kube-apiserver image:** `quay.io/sdodsonrht/getrandperf:go-semaphore` (unchanged from the
   DRBG-kernel test — confirmed via `go tool nm` to contain the real semaphore).
 - **`--profiling=true`**, namespace churn: same as the DRBG-kernel test (both were already active
   from that prior test and left running).
 - **Workload:** same 2,900-pod config.
-- **Harness:** `run_rounds.sh -r 20 -l go-semaphore-v3-stock-kernel`, standard settings.
+- **Harness:** `run_rounds.sh -r 20 -l go-semaphore-stock-kernel`, standard settings.
 
 ## Raw per-round peak Go-thread counts
 
@@ -47,7 +47,7 @@ baseline's sample size.
 | 19 | 82 |
 | 20 | 59 |
 
-Full timestamped detail: `2026-08-03-go-semaphore-v3-stock-kernel-rounds-raw.log`.
+Full timestamped detail: `2026-08-03-go-semaphore-stock-kernel-rounds-raw.log`.
 
 ### Batch 2 (2026-08-04, same config)
 
@@ -74,7 +74,7 @@ Full timestamped detail: `2026-08-03-go-semaphore-v3-stock-kernel-rounds-raw.log
 | 19 | 220 |
 | 20 | 351 |
 
-Full timestamped detail: `2026-08-04-go-semaphore-v3-stock-kernel-batch2-rounds-raw.log`.
+Full timestamped detail: `2026-08-04-go-semaphore-stock-kernel-batch2-rounds-raw.log`.
 
 ## Summary statistics
 
@@ -89,7 +89,7 @@ Full timestamped detail: `2026-08-04-go-semaphore-v3-stock-kernel-batch2-rounds-
 
 ## Three-way comparison (all configurations at n=38)
 
-| Stat | Stock baseline (n=38) | go-semaphore-v3 + stock kernel (n=38) | go-semaphore-v3 + DRBG kernel (n=38) |
+| Stat | Stock baseline (n=38) | go-semaphore + stock kernel (n=38) | go-semaphore + DRBG kernel (n=38) |
 |---|---:|---:|---:|
 | mean | 635.6 | **185.1** | 183.9 |
 | median | 535.0 | **130.5** | 138.0 |
@@ -97,26 +97,26 @@ Full timestamped detail: `2026-08-04-go-semaphore-v3-stock-kernel-batch2-rounds-
 | max | 2795 | 958 | 578 |
 | stdev | 527.7 | 182.1 | 147.7 |
 
-**Welch's t-test, stock baseline (n=38) vs. go-semaphore-v3 + stock kernel (n=38): t = 4.974,
+**Welch's t-test, stock baseline (n=38) vs. go-semaphore + stock kernel (n=38): t = 4.974,
 df ≈ 45.7 — highly significant** (p < 0.0001), and *stronger* than the batch-1-only comparison
 (t=4.423) — doubling the sample size reinforced the effect rather than revealing it as noise,
 the opposite of what happened with every earlier (build-flawed) go-semaphore comparison in this
 investigation. Mean reduction **70.9%**, median reduction **75.6%**.
 
-**Welch's t-test, go-semaphore-v3 + stock kernel (n=38) vs. go-semaphore-v3 + DRBG kernel (n=38):
+**Welch's t-test, go-semaphore + stock kernel (n=38) vs. go-semaphore + DRBG kernel (n=38):
 t = 0.031 — essentially zero difference.** With both configurations now at n=38 (see
-`2026-08-03-go-semaphore-v3-drbg-kernel-20rounds.md` for the DRBG-kernel batch 2 data), the two
+`2026-08-03-go-semaphore-drbg-kernel-20rounds.md` for the DRBG-kernel batch 2 data), the two
 kernel conditions are as statistically indistinguishable as this kind of test can show. The
-per-CPU-DRBG kernel contributes nothing measurable beyond what go-semaphore-v3 provides alone.
+per-CPU-DRBG kernel contributes nothing measurable beyond what go-semaphore provides alone.
 
 ## Conclusion: the DRBG kernel contributes nothing measurable
 
 This cleanly isolates the two variables that were previously bundled together as "the solution":
 
-- **go-semaphore-v3 alone (stock kernel) already produces the full effect** — a large,
+- **go-semaphore alone (stock kernel) already produces the full effect** — a large,
   highly-significant reduction vs. stock baseline, matching (if not slightly exceeding) the
   combined kernel+build result.
-- **Adding the per-CPU-DRBG kernel on top of go-semaphore-v3 adds no additional detectable
+- **Adding the per-CPU-DRBG kernel on top of go-semaphore adds no additional detectable
   benefit.** The kernel was the more invasive, harder-to-deploy half of the original "solution"
   (requiring `rpm-ostree` kernel replacement and node reboots) — this result suggests it can be
   dropped entirely without losing any of the observed improvement.
@@ -136,6 +136,6 @@ proposed as a bundled fix — appears to be unnecessary.
   round-to-round variance this investigation has documented throughout — driven by how many
   clients happen to reconnect simultaneously during a given restart, not by the fix candidate.
 - This does not by itself rule out a *smaller*, harder-to-detect benefit from the DRBG kernel at
-  this sample size — only that no such benefit is visible here. Given go-semaphore-v3 alone already
+  this sample size — only that no such benefit is visible here. Given go-semaphore alone already
   explains the full effect size, further isolating a possible small residual kernel contribution
   would need many more rounds than is likely worthwhile.

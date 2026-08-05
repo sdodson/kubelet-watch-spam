@@ -87,15 +87,15 @@ Full timestamped detail: `2026-08-04-go-semaphore-v3-stock-kernel-batch2-rounds-
 | min | 22 | 35 | 22 |
 | max | 958 | 543 | 958 |
 
-## Three-way comparison (combined n=38 vs. n=38)
+## Three-way comparison (all configurations at n=38)
 
-| Stat | Stock baseline (n=38) | go-semaphore-v3 + stock kernel (n=38) | go-semaphore-v3 + DRBG kernel (n=19) |
+| Stat | Stock baseline (n=38) | go-semaphore-v3 + stock kernel (n=38) | go-semaphore-v3 + DRBG kernel (n=38) |
 |---|---:|---:|---:|
-| mean | 635.6 | **185.1** | 215.0 |
-| median | 535.0 | **130.5** | 154.0 |
-| p90 | 1174.2 | 382.8 | 509.6 |
+| mean | 635.6 | **185.1** | 183.9 |
+| median | 535.0 | **130.5** | 138.0 |
+| p90 | 1174.2 | 382.8 | 390.2 |
 | max | 2795 | 958 | 578 |
-| stdev | 527.7 | 182.1 | 166.3 |
+| stdev | 527.7 | 182.1 | 147.7 |
 
 **Welch's t-test, stock baseline (n=38) vs. go-semaphore-v3 + stock kernel (n=38): t = 4.974,
 df ≈ 45.7 — highly significant** (p < 0.0001), and *stronger* than the batch-1-only comparison
@@ -103,9 +103,11 @@ df ≈ 45.7 — highly significant** (p < 0.0001), and *stronger* than the batch
 the opposite of what happened with every earlier (build-flawed) go-semaphore comparison in this
 investigation. Mean reduction **70.9%**, median reduction **75.6%**.
 
-**Welch's t-test, go-semaphore-v3 + stock kernel (batch 1, n=19) vs. go-semaphore-v3 + DRBG kernel
-(n=19): t = -0.324 — not remotely significant.** The two kernel conditions remain statistically
-indistinguishable from each other with the go-semaphore-v3 build in place.
+**Welch's t-test, go-semaphore-v3 + stock kernel (n=38) vs. go-semaphore-v3 + DRBG kernel (n=38):
+t = 0.031 — essentially zero difference.** With both configurations now at n=38 (see
+`2026-08-03-go-semaphore-v3-drbg-kernel-20rounds.md` for the DRBG-kernel batch 2 data), the two
+kernel conditions are as statistically indistinguishable as this kind of test can show. The
+per-CPU-DRBG kernel contributes nothing measurable beyond what go-semaphore-v3 provides alone.
 
 ## Conclusion: the DRBG kernel contributes nothing measurable
 

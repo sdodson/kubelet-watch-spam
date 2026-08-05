@@ -311,6 +311,50 @@ for r in d['data']['result']:
 "
 ```
 
+## go-semaphore-v3 Investigation — Final Results (2026-08-03/04)
+
+**Status: paused pending a final build to test.** The go-semaphore fix candidate is a two-file
+patch to `vendor/github.com/golang-fips/openssl/v2` (`sem.go` new, `rand.go` modified) that wraps
+`RAND_bytes` in a semaphore capped at `runtime.NumCPU()` (tunable via `GOLANG_FIPS_DRBG_LIMIT`),
+originally proposed alongside a custom per-CPU-DRBG kernel as a combined fix.
+
+**Two important build-fidelity findings first:** the go-semaphore images tested through
+2026-08-03 (`v1`, `v2`) were missing the `golang-src` RPM matching the patched toolchain, so they
+were compiled against the *stock* Go standard library — the semaphore code was never actually
+present in those binaries (confirmed via `go tool nm`). All results from those builds were removed
+from this repo as invalid. `go-semaphore-v3` (built with `golang`+`golang-bin`+`golang-src` all at
+the same NVR, plus `GOEXPERIMENT=strictfipsruntime` set explicitly to match the official build
+pipeline) is the first build confirmed to actually contain the patch.
+
+**With `go-semaphore-v3`, all three configurations tested at n=38 rounds:**
+
+| Stat | Stock baseline | go-semaphore-v3 + stock kernel | go-semaphore-v3 + DRBG kernel |
+|---|---:|---:|---:|
+| mean peak threads | 636 | 185 (**-71%**) | 184 (**-71%**) |
+| median peak threads | 535 | 131 (**-76%**) | 138 (**-74%**) |
+| p90 | 1174 | 383 (-67%) | 390 (-67%) |
+| max | 2795 | 958 (-66%) | 578 (-79%) |
+
+- **go-semaphore-v3 vs. stock baseline:** Welch's t ≈ 5.0 on both kernel variants — highly
+  statistically significant (p < 0.0001), and the effect *strengthened* with more rounds rather
+  than washing out as noise (the opposite of every earlier build-flawed comparison).
+- **DRBG kernel vs. stock kernel (both with go-semaphore-v3):** Welch's t = 0.031 — essentially no
+  difference. **The per-CPU-DRBG kernel — the more invasive half of the original proposal, requiring
+  custom kernel RPMs and node reboots — contributes nothing measurable beyond the go-semaphore
+  build alone.**
+- **Open question:** goroutine dumps captured during spikes show the same watch-reconnect-storm
+  signature (~90%+ of goroutines in `cacheWatcher.process`/`WatchServer.HandleHTTP`) with or
+  without the fix — the semaphore's large effect on peak OS thread counts isn't explained by any
+  visible change to that dominant goroutine population. The causal mechanism remains unconfirmed.
+- **RAND_bytes concurrency** (measured directly via bpftrace uprobe on `RAND_bytes` in
+  `libcrypto.so.3`) is bounded but not hard-capped at the theoretical 16 — likely because other
+  OpenSSL-internal call sites into `RAND_bytes` don't route through the semaphore-gated Go wrapper.
+
+Full data and methodology: `results/2026-08-01-stock-baseline-4xlcp-20rounds.md`,
+`results/2026-08-03-go-semaphore-v3-stock-kernel-20rounds.md`,
+`results/2026-08-03-go-semaphore-v3-drbg-kernel-20rounds.md`,
+`results/2026-08-02-threaddump-analysis.md`. Build recipe: `containerfiles/Containerfile.go-semaphore`.
+
 ## Current Workload Configuration (go-semaphore / stock A-B comparison)
 
 The workload actively used for the go-semaphore vs. stock kube-apiserver
